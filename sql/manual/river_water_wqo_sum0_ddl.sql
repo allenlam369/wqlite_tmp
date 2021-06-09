@@ -1,0 +1,58 @@
+drop table if exists river_water_wqo_sum0 cascade;
+
+create table river_water_wqo_sum0 (
+	zone_ varchar(30),
+	wcz varchar(10),
+	subzone varchar(100),
+	river varchar(50),
+	station varchar(5),
+	yr int,
+	total int,
+	min_ph decimal(2,1),
+	max_ph decimal(2,1),
+	n_ph int,
+	m_ph int,
+	rate_ph numeric(27,13),
+	n_bod5 int,
+	max_bod5 decimal(3,1),
+	m_bod5 int,
+	rate_bod5 numeric(27,13),
+	max_cod decimal(3,1),
+	n_cod int,
+	m_cod int,
+	rate_cod numeric(27,13),
+	min_do decimal(2,1),
+	n_do int,
+	m_do int,
+	rate_do numeric(27,13),
+	max_amd_ss decimal(3,1),
+	n_ss int,
+	amd_ss decimal(38,6),
+	rate_ss_amd int,
+	max_nh4 decimal(2,1),
+	n_nh4 int,
+	m_nh4 int,
+	rate_nh4 numeric(27,13),
+	max_aam_nh3 decimal(4,3),
+	nh3_aam decimal(38,8),
+	rate_nh3_aam int,
+	max_5md_ec decimal(4,0),
+	n_ec_5md int,
+	m_ec_5md int,
+	rate_ec_5md numeric(27,13),
+	max_5gm_ec decimal(4,0),
+	n_ec_5gm int,
+	m_ec_5gm int,
+	rate_ec_5gm numeric(27,13),
+	max_agm_ec decimal(4,0),
+	ec_agm DOUBLE PRECISION,
+	rate_ec_agm int,
+	rate_4wqo numeric(33,15),
+	rate_5wqo numeric(33,15),
+	constraint pk_river_water_wqo_sum0 primary key (station,yr)
+);
+
+ALTER TABLE river_water_wqo_sum0 add CONSTRAINT fk_river_water_wqo_sum0
+FOREIGN KEY(station)
+REFERENCES rstation(statname)  ON DELETE NO ACTION  ON UPDATE NO ACTION;
+

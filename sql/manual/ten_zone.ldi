@@ -1,0 +1,2 @@
+\encoding UTF8
+\COPY TEN_ZONE FROM 'C:\\Users\\SITO(WP)71\\Google Drive\\EPD\\dbMigration\\mssql_postgres\\ddl\\03\\ten_zone.txt'     WITH      DELIMITER AS ','    NULL AS ''        CSV QUOTE AS '"'             ESCAPE AS '"'

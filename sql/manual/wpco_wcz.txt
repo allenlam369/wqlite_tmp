@@ -1,0 +1,18 @@
+2S,S,Second Southern Supplementary Water Control Zone,"南區第二附水質管制區",2SII,SSSWCZ,"1999-11-01 00:00:00",16,EWP5,"2004-05-12 00:00:00",1
+DB,D,Deep Bay Water Control Zone,"后海灣水質管制區",5,DBWCZ,"1990-12-01 00:00:00",5,EWP5,"2004-05-12 00:00:00",1
+EB,E,Eastern Buffer Water Control Zone,"東部緩衝區水質管制區",9,EBWCZ,"1993-06-01 00:00:00",9,EWP5,"2004-05-12 00:00:00",1
+JB,J,Junk Bay Water Control Zone,"將軍澳水質管制區",4,JBWCZ,"1989-08-01 00:00:00",4,EWP5,"2004-05-12 00:00:00",1
+MB,M,Mirs Bay Water Control Zone,"大鵬灣水質管制區",6,MBWCZ,"1990-12-01 00:00:00",6,EWP5,"2004-05-12 00:00:00",1
+NS,N,North Western Supplementary Water Control Zone,"西北部附水質管制區",7SI,NWSWCZ,"1999-11-01 00:00:00",17,EWP5,"2004-05-12 00:00:00",1
+NW,N,North Western Water Control Zone,"西北部水質管制區",7,NWWCZ,"1992-04-01 00:00:00",7,EWP5,"2004-05-12 00:00:00",1
+PS,P,Port Shelter Water Control Zone,"牛尾海水質管制區",3,PSWCZ,"1989-08-01 00:00:00",3,EWP5,"2004-05-12 00:00:00",1
+SS,S,Southern Supplementary Water Control Zone,"南區附水質管制區",2SI,SSWCZ,"1993-06-01 00:00:00",12,EWP5,"2004-05-12 00:00:00",1
+SW,S,Southern Water Control Zone,"南區水質管制區",2,SWCZ,"1988-08-01 00:00:00",2,EWP5,"2004-05-12 00:00:00",1
+TH,T,Tolo Harbour and Channel Water Control Zone,"吐露港及赤門水質管制區",1,THCWCZ,"1987-04-01 00:00:00",1,EWP5,"2004-05-12 00:00:00",1
+TS,T,Tolo Harbour Supplementary Water Control Zone,"吐露港附水質管制區",1SI,THSWCZ,"1993-06-01 00:00:00",11,EWP5,"2004-05-12 00:00:00",1
+V1,V,Victoria Harbour (Phase One) Water Control Zone,"維多利亞港(第一期)水質管制區",P1,VHWCZ(P1),"1994-11-01 00:00:00",13,EWP5,"2004-05-12 00:00:00",1
+V2,V,Victoria Harbour (Phase Two) Water Control Zone,"維多利亞港(第二期)水質管制區",P2,VHWCZ(P2),"1995-09-01 00:00:00",14,EWP5,"2004-05-12 00:00:00",1
+V3,V,Victoria Harbour (Phase Three) Water Control Zone,"維多利亞港(第三期)水質管制區",P3,VHWCZ(P3),"1996-04-01 00:00:00",15,EWP5,"2004-05-12 00:00:00",1
+VH,V,"Victoria Harbour (Phase One, Two and Three) Water Control Zone","維多利亞港水質管制區",10,VHWCZ,,10,EWP5,"2004-05-12 00:00:00",1
+WB,W,Western Buffer Water Control Zone,"西部緩衝區水質管制區",8,WBWCZ,"1993-06-01 00:00:00",8,EWP5,"2004-05-12 00:00:00",1
+XX,X,Unknown Water Control Zone,"不名水質管制區",X,UNKNOWN,,0,EWP5,"2004-05-12 00:00:00",1

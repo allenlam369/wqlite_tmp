@@ -1,0 +1,38 @@
+BEA,D,River Beas,雙魚河,14,EWP5,"2004-05-12 00:00:00",1
+FPN,D,Fairview Park Nullah,"錦綉花園明渠",19,EWP5,"2004-05-12 00:00:00",1
+GAN,D,River Ganges,"平原河",15,EWP5,"2004-05-12 00:00:00",1
+HCR,P,Ho Chung River,"蠔涌河",9,EWP5,"2004-05-12 00:00:00",1
+HHS,D,Hang Hau Stream,"坑口溪",34,APCL,"2010-09-14 00:00:00",1
+HPN,D,Ha Pak Nai Stream,"下白泥溪",20,EWP5,"2004-05-12 00:00:00",1
+IND,D,River Indus,"梧桐河",13,EWP5,"2004-05-12 00:00:00",1
+KTN,V,Kai Tak Nullah,"啟德明渠",33,EWP5,"2004-05-12 00:00:00",1
+KTR,D,Kam Tin River,"錦田河",17,EWP5,"2004-05-12 00:00:00",1
+KWK,V,Kau Wa Keng Stream,"九華徑溪",32,EWP5,"2004-05-12 00:00:00",1
+LTR,T,Lam Tsuen River,"林村河",2,EWP5,"2004-05-12 00:00:00",1
+MWR,S,Mui Wo River,"梅窩河",7,EWP5,"2004-05-12 00:00:00",1
+NHS,D,Ngau Hom Sha Stream,"鰲磡沙溪",25,EWP5,"2004-05-12 00:00:00",1
+NTM,D,Ngau Tam Mei Main Drain Channel,"牛潭尾主要排水道",35,I(WW)42,"2006-01-25 00:00:00",1
+NWS,D,Nim Wan Stream,"稔灣溪",26,EWP5,"2004-05-12 00:00:00",1
+PMK,W,Pai Min Kok Stream,"排棉角(釣魚灣)溪",30,EWP5,"2004-05-12 00:00:00",1
+PNS,D,Pak Nai Stream,"白泥溪",22,EWP5,"2004-05-12 00:00:00",1
+SDT,V,Sam Dip Tam Stream,"三叠潭溪",31,EWP5,"2004-05-12 00:00:00",1
+SKM,P,Sha Kok Mei Stream,"沙角尾溪",10,EWP5,"2004-05-12 00:00:00",1
+SLS,T,Shan Liu Stream,"山寮溪",5,EWP5,"2004-05-12 00:00:00",1
+SMR,T,Shing Mun River,"城門河",1,EWP5,"2004-05-12 00:00:00",1
+SPN,D,Sheung Pak Nai Stream,"上白泥溪",24,EWP5,"2004-05-12 00:00:00",1
+STA,S,Stanley Stream,"赤柱溪",8,EWP5,"2004-05-12 00:00:00",1
+STR,D,San Tin River,"新田河",36,I(WW)42,"2006-01-25 00:00:00",1
+TCH,P,Tai Chung Hau Stream,"大涌口溪",11,EWP5,"2004-05-12 00:00:00",1
+TCR,N,Tung Chung River,"東涌河",29,EWP5,"2004-05-12 00:00:00",1
+TKS,D,Tsang Kok Stream,"曾角溪",27,EWP5,"2004-05-12 00:00:00",1
+TLS,J,Tseng Lan Shue Stream,"井欄樹溪",12,EWP5,"2004-05-12 00:00:00",1
+TMR,N,Tuen Mun River,"屯門河",28,EWP5,"2004-05-12 00:00:00",1
+TPK,T,Tai Po Kau Stream,"大埔滘溪",4,EWP5,"2004-05-12 00:00:00",1
+TPR,T,Tai Po River,"大埔河",3,EWP5,"2004-05-12 00:00:00",1
+TSH,D,Tai Shui Hang Stream,"大水坑溪",21,EWP5,"2004-05-12 00:00:00",1
+TSU,V,Tsui Ping River,"翠屏河",37,EWP5,"2017-01-01 00:00:00",1
+TSW,D,Tin Shui Wai Nullah,"天水圍明渠",18,EWP5,"2004-05-12 00:00:00",1
+TTS,D,Tsang Tsui Stream,"曾嘴溪",23,EWP5,"2004-05-12 00:00:00",1
+TUN,T,Tung Tze Stream,"洞梓溪",6,EWP5,"2004-05-12 00:00:00",1
+XXX,X,Unknown River,"不名河溪",0,EWP5,"2004-05-12 00:00:00",1
+YLC,D,Yuen Long Creek,"元朗河",16,EWP5,"2004-05-12 00:00:00",1

@@ -1,0 +1,108 @@
+2S,2S,Unknow subzone in Second Southern Supplementary Water Control Zone,"南區第二附水質管制區內不名分區",,nu,,EWP5,"2004-05-12 00:00:00",1
+2S2,2S,Secondary Contact Recreation Subzone,"次級接觸康樂活動分區",M,BA,,EWP5,"2004-05-12 00:00:00",1
+2So,2S,Other Marine Waters,"其他海洋水域",M,BA,,EWP5,"2004-05-12 00:00:00",1
+D2c,DB,Secondary Contact Recreation Subzone,"次級接觸康樂活動分區",M,R,,EWP5,"2004-05-12 00:00:00",1
+DB,DB,Unknow subzone in Deep Bay Water Control Zone,"后海灣水質管制區內不名分區",,nu,,EWP5,"2004-05-12 00:00:00",1
+Dbe,DB,Beas Subzone,"雙魚分區",I,R,14,EWP5,"2004-05-12 00:00:00",1
+Dga,DB,Ganges Subzone,"平原分區",I,R,15,EWP5,"2004-05-12 00:00:00",1
+Dim,DB,Inner Marine Subzone,"內海分區",M,R,,EWP5,"2004-05-12 00:00:00",1
+Din,DB,Indus Subzone,"梧桐分區",I,R,13,EWP5,"2004-05-12 00:00:00",1
+Dma,DB,Mariculture Subzone,"海產養殖分區",M,R,,EWP5,"2004-05-12 00:00:00",1
+Doi,DB,Other Inland Waters,"其他內陸水域",I,R,,EWP5,"2004-05-12 00:00:00",1
+Dom,DB,Outer Marine Subzone,"外海分區",M,R,,EWP5,"2004-05-12 00:00:00",1
+Dwg,DB,Water Gathering Ground Subzone,"集水地區分區",I,R,,EWP5,"2004-05-12 00:00:00",1
+Dyb,DB,Yung Long Bathing Beach Subzone,"湧浪泳灘分區",M,R,,EWP5,"2004-05-12 00:00:00",1
+Dyl,DB,Yuen Long And Kam Tin (Lower) Subzone,"元朗及錦田(下)分區",I,R,,EWP5,"2004-05-12 00:00:00",1
+Dyu,DB,Yuen Long And Kam Tin (Upper) Subzone,"元朗及錦田(上)分區",I,R,16,EWP5,"2004-05-12 00:00:00",1
+EB,EB,Unknow subzone in Eastern Buffer Water Control Zone,"東部緩衝區水質管制區內不名分區",,nu,,EWP5,"2004-05-12 00:00:00",1
+Efc,EB,Fish Culture Subzone,"魚類養殖分區",M,AA,,EWP5,"2004-05-12 00:00:00",1
+Eoi,EB,Other Inland Waters,"其他內陸水域",I,AA,,EWP5,"2004-05-12 00:00:00",1
+Eom,EB,Other Marine Waters,"其他海洋水域",M,AA,,EWP5,"2004-05-12 00:00:00",1
+Ewg,EB,Water Gathering Ground Subzone,"集水地區分區",I,AA,,EWP5,"2004-05-12 00:00:00",1
+J2c,JB,Secondary Contact Recreation Subzone,"次級接觸康樂活動分區",M,L,,EWP5,"2004-05-12 00:00:00",1
+JB,JB,Unknow subzone in Junk Bay Water Control Zone,"將軍澳水質管制區內不名分區",,nu,,EWP5,"2004-05-12 00:00:00",1
+Jfc,JB,Fish Culture Subzone,"魚類養殖分區",M,L,,EWP5,"2004-05-12 00:00:00",1
+Jiw,JB,Inland Waters,"內陸水域",I,L,,EWP5,"2004-05-12 00:00:00",1
+Jom,JB,Other Marine Waters,"其他海洋水域",M,L,,EWP5,"2004-05-12 00:00:00",1
+M2c,MB,Secondary Contact Recreation Subzone,"次級接觸康樂活動分區",M,U,,EWP5,"2004-05-12 00:00:00",1
+MB,MB,Unknow subzone in Mirs Bay Water Control Zone,"大鵬灣水質管制區內不名分區",,nu,,EWP5,"2004-05-12 00:00:00",1
+Mfc,MB,Fish Culture Subzone,"魚類養殖分區",M,U,,EWP5,"2004-05-12 00:00:00",1
+Moi,MB,Other Inland Waters,"其他內陸水域",I,U,,EWP5,"2004-05-12 00:00:00",1
+Mom,MB,Other Marine Waters,"其他海洋水域",M,U,,EWP5,"2004-05-12 00:00:00",1
+Mwg,MB,Water Gathering Ground Subzone,"集水地區分區",I,U,,EWP5,"2004-05-12 00:00:00",1
+N2c,NW,Secondary Contact Recreation Subzone,"次級接觸康樂活動分區",M,X,,EWP5,"2004-05-12 00:00:00",1
+Nbb,NW,Bathing Beach Subzone,"泳灘分區",M,X,,EWP5,"2004-05-12 00:00:00",1
+Ncp,NW,Castle Peak Bay Subzone,"青山灣分區",M,X,,EWP5,"2004-05-12 00:00:00",1
+Noi,NW,Other Inland Waters,"其他內陸水域",I,X,,EWP5,"2004-05-12 00:00:00",1
+Nom,NW,Other Marine Waters,"其他海洋水域",M,X,,EWP5,"2004-05-12 00:00:00",1
+NS,NS,Unknow subzone in North Western Supplementary Water Control Zone,"西北部附水質管制區內不名分區",,nu,,EWP5,"2004-05-12 00:00:00",1
+NS2,NS,Secondary Contact Recreation Subzone,"次級接觸康樂活動分區",M,AZ,,EWP5,"2004-05-12 00:00:00",1
+Nso,NS,Other Marine Waters,"其他海洋水域",M,AZ,,EWP5,"2004-05-12 00:00:00",1
+Nta,NW,Tuen Mun (A) Subzone,屯門(A)分區,I,X,,EWP5,"2004-05-12 00:00:00",1
+Ntb,NW,Tuen Mun (B) Subzone,屯門(B)分區,I,X,,EWP5,"2004-05-12 00:00:00",1
+Ntc,NW,Tuen Mun (C) Subzone,屯門(C)分區,I,X,,EWP5,"2004-05-12 00:00:00",1
+NW,NW,Unknow subzone in North Western Water Control Zone,"西北部水質管制區內不名分區",,nu,,EWP5,"2004-05-12 00:00:00",1
+Nwg,NW,Water Gathering Ground Subzone,"集水地區分區",I,X,,EWP5,"2004-05-12 00:00:00",1
+P2c,PS,Secondary Contact Recreation Subzone,"次級接觸康樂活動分區",M,O,,EWP5,"2004-05-12 00:00:00",1
+Pbb,PS,Bathing Beach Subzone,"泳灘分區",M,O,,EWP5,"2004-05-12 00:00:00",1
+Pfc,PS,Fish Culture Subzone,"魚類養殖分區",M,O,,EWP5,"2004-05-12 00:00:00",1
+Pha,PS,Ho Chung (A) Subzone,蠔涌(A)分區,I,O,12,EWP5,"2004-05-12 00:00:00",1
+Poi,PS,Other Inland Waters,"其他內陸水域",I,O,,EWP5,"2004-05-12 00:00:00",1
+Pom,PS,Other Marine Waters,"其他海洋水域",M,O,,EWP5,"2004-05-12 00:00:00",1
+PS,PS,Unknow subzone in Port Shelter Water Control Zone,"牛尾海水質管制區內不名分區",,nu,,EWP5,"2004-05-12 00:00:00",1
+S2c,SW,Secondary Contact Recreation Subzone,"次級接觸康樂活動分區",M,I,,EWP5,"2004-05-12 00:00:00",1
+Sbb,SW,Bathing Beach Subzone,"泳灘分區",M,I,,EWP5,"2004-05-12 00:00:00",1
+Sfc,SW,Fish Culture Subzone,"魚類養殖分區",M,I,,EWP5,"2004-05-12 00:00:00",1
+Sma,SW,Mui Wo (A) Subzone,梅窩(A)分區,I,I,,EWP5,"2004-05-12 00:00:00",1
+Smb,SW,Mui Wo (B) Subzone,梅窩(B)分區,I,I,11,EWP5,"2004-05-12 00:00:00",1
+Smc,SW,Mui Wo (C) Subzone,梅窩(C)分區,I,I,9,EWP5,"2004-05-12 00:00:00",1
+Smd,SW,Mui Wo (D) Subzone,梅窩(D)分區,I,I,,EWP5,"2004-05-12 00:00:00",1
+Sme,SW,Mui Wo (E) Subzone,梅窩(E)分區,I,I,10,EWP5,"2004-05-12 00:00:00",1
+Smf,SW,Mui Wo (F) Subzone,梅窩(F)分區,I,I,,EWP5,"2004-05-12 00:00:00",1
+Soi,SW,Other Inland Waters,"其他內陸水域",I,I,,EWP5,"2004-05-12 00:00:00",1
+Som,SW,Other Marine Waters,"其他海洋水域",M,I,,EWP5,"2004-05-12 00:00:00",1
+SS,SS,Unknow subzone in Southern Supplementary Water Control Zone,"南區附水質管制區內不名分區",,nu,,EWP5,"2004-05-12 00:00:00",1
+SSw,SS,Whole Zone (Southern Supplementary Water Control Zone),"整個管制區(南區附水質管制區)",I,AG,,EWP5,"2004-05-12 00:00:00",1
+SW,SW,Unknow subzone in Southern Water Control Zone,"南區水質管制區內不名分區",,nu,,EWP5,"2004-05-12 00:00:00",1
+Tb2,TH,Secondary Contact Recreation Subzone / Buffer Subzone,"次級接觸康樂活動分區/緩衝分區",M,B,,EWP5,"2004-05-12 00:00:00",1
+Tbf,TH,Fish Culture Subzone / Buffer Subzone,"魚類養殖分區/緩衝分區",M,B,,EWP5,"2004-05-12 00:00:00",1
+Tc2,TH,Secondary Contact Recreation Subzone / Channel Subzone,"次級接觸康樂活動分區/海峽分區",M,B,,EWP5,"2004-05-12 00:00:00",1
+Tcf,TH,Fish Culture Subzone / Channel Subzone,"魚類養殖分區/海峽分區",M,B,,EWP5,"2004-05-12 00:00:00",1
+TH,TH,Unknow subzone in Tolo Harbour and Channel Water Control Zone,"吐露港及赤門水質管制區內不名分區",,nu,,EWP5,"2004-05-12 00:00:00",1
+Th2,TH,Secondary Contact Recreation Subzone / Habour Subzone,"次級接觸康樂活動分區/海港分區",M,B,,EWP5,"2004-05-12 00:00:00",1
+Thf,TH,Fish Culture Subzone / Harbour Subzone,"魚類養殖分區/海港分區",M,B,,EWP5,"2004-05-12 00:00:00",1
+Tlc,TH,LT(C) Subzone,LT(C),I,F,7,EWP5,"2004-05-12 00:00:00",1
+Tld,TH,LT(D) Subzone,LT(D),I,F,6,EWP5,"2004-05-12 00:00:00",1
+Tow,TH,Other Watercourses,"其他水道",I,F,,EWP5,"2004-05-12 00:00:00",1
+TS,TS,Unknow subzone in Tolo Harbour Supplementary Water Control Zone,"吐露港附水質管制區內不名分區",,nu,,EWP5,"2004-05-12 00:00:00",1
+Tsa,TH,SM(A) Subzone,SM(A),I,F,4,EWP5,"2004-05-12 00:00:00",1
+Tsb,TH,SM(B) Subzone,SM(B),I,F,,EWP5,"2004-05-12 00:00:00",1
+Tsc,TH,SM(C) Subzone,SM(C),I,F,2,EWP5,"2004-05-12 00:00:00",1
+Tsd,TH,SM(D) Subzone,SM(D),I,F,,EWP5,"2004-05-12 00:00:00",1
+Tse,TH,SM(E) Subzone,SM(E),I,F,,EWP5,"2004-05-12 00:00:00",1
+Tsf,TH,SM(F) Subzone,SM(F),I,F,3,EWP5,"2004-05-12 00:00:00",1
+Tsg,TH,SM(G) Subzone,SM(G),I,F,,EWP5,"2004-05-12 00:00:00",1
+Tsh,TH,SM(H) Subzone,SM(H),I,F,5,EWP5,"2004-05-12 00:00:00",1
+Tsi,TH,SM(I) Subzone,SM(I),I,F,1,EWP5,"2004-05-12 00:00:00",1
+TSw,TS,Whole Zone (Tolo Harbour Supplementary Water Control Zone),"整個管制區(吐露港附水質管制區)",I,AJ,,EWP5,"2004-05-12 00:00:00",1
+Tta,TH,TP(A) Subzone,TP(A),I,F,19,EWP5,"2004-05-12 00:00:00",1
+Ttb,TH,TP(B) Subzone,TP(B),I,F,20,EWP5,"2004-05-12 00:00:00",1
+Ttc,TH,TP(C) Subzone,TP(C),I,F,8,EWP5,"2004-05-12 00:00:00",1
+V1,V1,Unknow subzone in Victoria Harbour (Phase One) Water Control Zone,"維多利亞港(第一期)水質管制區內不名分區",,nu,,EWP5,"2004-05-12 00:00:00",1
+V1i,V1,Inland Waters,"內陸水域",I,AO,17,EWP5,"2004-05-12 00:00:00",1
+V1m,V1,Marine Waters,"海洋水域",M,AO,,EWP5,"2004-05-12 00:00:00",1
+V2,V2,Unknow subzone in Victoria Harbour (Phase Two) Water Control Zone,"維多利亞港(第二期)水質管制區內不名分區",,nu,,EWP5,"2004-05-12 00:00:00",1
+V2i,V2,Inland Waters,"內陸水域",I,AR,18,EWP5,"2004-05-12 00:00:00",1
+V2m,V2,Marine Waters,"海洋水域",M,AR,,EWP5,"2004-05-12 00:00:00",1
+V3,V3,Unknow subzone in Victoria Harbour (Phase Three) Water Control Zone,"維多利亞港(第三期)水質管制區內不名分區",,nu,,EWP5,"2004-05-12 00:00:00",1
+V3i,V3,Inland Waters,"內陸水域",I,AU,,EWP5,"2004-05-12 00:00:00",1
+V3m,V3,Marine Waters,"海洋水域",M,AU,,EWP5,"2004-05-12 00:00:00",1
+VH,VH,Unknow subzone in Victoria Harbour,"維多利亞港水質管制區內不名分區",,nu,,EWP5,"2004-05-12 00:00:00",1
+W2c,WB,Secondary Contact Recreation Subzone,"次級接觸康樂活動分區",M,AD,,EWP5,"2004-05-12 00:00:00",1
+WB,WB,Unknow subzone in Western Buffer Water Control Zone,"西部緩衝區水質管制區內不名分區",,nu,,EWP5,"2004-05-12 00:00:00",1
+Wbb,WB,Bathing Beach Subzone,"泳灘分區",M,AD,,EWP5,"2004-05-12 00:00:00",1
+Wfc,WB,Fish Culture Subzone,"魚類養殖分區",M,AD,,EWP5,"2004-05-12 00:00:00",1
+Woi,WB,Other Inland Waters,"其他內陸水域",I,AD,,EWP5,"2004-05-12 00:00:00",1
+Wom,WB,Other Marine Waters,"其他海洋水域",M,AD,,EWP5,"2004-05-12 00:00:00",1
+Wwg,WB,Water Gathering Ground Subzone,"集水地區分區",I,AD,,EWP5,"2004-05-12 00:00:00",1
+XX,XX,Unknown subzone,"不名分區",,nu,,EWP5,"2004-05-12 00:00:00",1

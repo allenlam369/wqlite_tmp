@@ -1,0 +1,2 @@
+\encoding UTF8
+\COPY MSTATION FROM 'C:\\Allen\\EPD\\dbMigration\\mssql_postgres\\Export\\Tables\\02\\mstation.txt'     WITH      DELIMITER AS ','    NULL AS ''        CSV QUOTE AS '"'             ESCAPE AS '"'

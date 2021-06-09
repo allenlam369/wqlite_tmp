@@ -1,0 +1,57 @@
+4608,ANG,Anglers' Beach ,釣魚灣泳灘,钓鱼湾泳滩,TWD,N10,LOP,,,823832.245,825030.806,,,8,testuser,"2013-09-04 16:01:00",1
+4602,APP,Approach Beach ,近水灣泳灘,近水湾泳滩,TWD,N10,LOP,X,,826952.904,825286.939,,,8,iwp45,"2011-11-22 15:57:00",1
+4706,B,Butterfly Beach,蝴蝶灣泳灘,蝴蝶湾泳滩,TMD,N07,LOP,"",,813592.628,825831.081,,,7,Geomatics,"2011-03-03 01:57:00",1
+4101,BW,Big Wave Bay Beach,大浪灣泳灘,大浪湾泳滩,HKE,H15,QUB,"",,843553.661,811958.361,,,2,Geomatics,"2011-03-03 01:57:00",1
+4508,CAM,Campers Beach [Non-gazetted],"露營灣[非刊憲泳灘]","露营湾[非刊宪泳滩]",SKD,N15,KLW,*,,,,,,,Yampo,"2016-10-27 12:10:00",1
+4605,CAS,Casam Beach,"更生灣泳灘","更生湾泳滩",TWD,N10,LOP,X,,825767.852,825339.486,,,8,iwp45,"2011-11-22 15:57:00",1
+4510,CH,Chong Hing Water Sports Centre,"創興水上活動中心","创兴水上活动中心",SKD,N15,KLW,@,,,,,,,Yampo,"2016-10-27 12:11:00",1
+4005,CHK,Chung Hom Kok Beach,"舂坎角泳灘","舂坎角泳滩",HKS,H30,QUB,,,838842.394,808808.572,,,2,testuser,"2015-12-24 12:54:00",1
+4705,CP,Castle Peak Beach,"青山灣泳灘","青山湾泳滩",TMD,N07,LOP,"",,815964.255,826641.589,,,7,Geomatics,"2011-03-03 01:57:00",1
+4403,CSL,Lower Cheung Sha Beach,"下長沙泳灘","下长沙泳滩",LAN,N18,CMW,,,,,,,,iwp45,"2012-08-08 09:38:00",1
+4402,CSU,Upper Cheung Sha Beach,"上長沙泳灘","上长沙泳滩",LAN,N18,CMW,,,,,,,,iwp45,"2012-08-08 09:39:00",1
+4502,CW1,Clear Water Bay First Beach,"清水灣第一灣泳灘","清水湾第一湾泳滩",SKD,R18,KLW,"",,848059.304,816878.629,,,3,Geomatics,"2011-03-03 01:57:00",1
+4503,CW2,Clear Water Bay Second Beach,"清水灣第二灣泳灘","清水湾第二湾泳滩",SKD,R18,KLW,"",,847738.360,816535.703,,,3,Geomatics,"2011-03-03 01:57:00",1
+4406,DB,Discovery Bay [Non-gazetted beach],"愉景灣 [非刊憲泳灘]","愉景湾 [非刊宪泳滩]",LAN,N18,CMW,,,,,,,,Yampo,"2016-10-27 12:12:00",1
+4006,DW,Deep Water Bay Beach,"深水灣泳灘","深水湾泳滩",HKS,H30,QUB,,,837235.089,811793.572,,,2,testuser,"2015-12-24 12:54:00",1
+4701,GB,Golden Beach,"黃金泳灘","黄金泳滩",TMD,N07,LOP,"",,816785.181,825832.410,,,7,Geomatics,"2011-03-03 01:57:00",1
+4607,GEM,Gemini Beaches [Beach not open for swimming],"雙仙灣泳灘 [泳灘不開放給市民游泳]","双仙湾泳滩",TWD,N10,LOP,X,,825225.659,824935.550,,,8,siwp12,"2018-12-12 16:09:00",1
+4806,HH,Hoi Ha [Non-gazetted],"海下[非刊憲泳灘]","海下[非刊宪泳滩]",TND,N15,KLW,*,,,,,,,Yampo,"2016-10-27 12:12:00",1
+4504,HM,Hap Mun Bay Beach,"廈門灣泳灘","厦门湾泳滩",SKD,N15,KLW,"",,848521.853,824150.929,,,3,Geomatics,"2011-03-03 01:57:00",1
+4606,HOM,Hoi Mei Wan Beach ,"海美灣泳灘","海美湾泳滩",TWD,N10,LOP,X,,825388.816,825083.087,,,8,iwp45,"2011-11-22 15:57:00",1
+4105,HP,Hairpin Beach [Beach not open for swimming],"夏萍灣泳灘[泳灘不開放給市民游泳]","夏萍湾泳滩",HKE,H15,QUB,X,,840228.915,809487.972,,,2,testuser,"2014-12-12 09:10:00",1
+4301,HSY,Hung Shing Yeh Beach,"洪聖爺灣泳灘","洪圣爷湾泳滩",LAM,LAM,CMW,,,830370.772,808852.393,,,2,iwp45,"2012-08-08 09:40:00",1
+4704,K,Kadoorie Beach,"加多利灣泳灘","加多利湾泳滩",TMD,N07,LOP,"",,816126.220,826383.632,,,7,Geomatics,"2011-03-03 01:57:00",1
+4505,KT,Kiu Tsui Beach,"橋咀泳灘","桥咀泳滩",SKD,N15,KLW,"",,847743.220,825456.415,,,3,Geomatics,"2011-03-03 01:57:00",1
+4506,KTN,Kiu Tsui Beach (New),"橋咀泳灘(新)","桥咀泳滩(新)",SKD,N15,KLW,*,,847743.220,825456.415,,,3,Geomatics,"2011-03-03 01:57:00",1
+4202,KY,Kwun Yam Beach,"觀音灣泳灘","观音湾泳滩",CCD,N18,CMW,,,821642.496,807619.017,,,2,iwp45,"2012-08-08 09:40:00",1
+4604,LIDO,Lido Beach ,"麗都灣泳灘","丽都湾泳滩",TWD,N10,LOP,X,,825919.164,825361.836,,,8,iwp45,"2011-11-22 15:58:00",1
+4708,LK,Lung Kwu Tan [Non-gazetted beach],"龍鼓灘[非刊憲泳灘]","龙鼓滩[非刊宪泳滩]",TMD,N07,LOP,*,,,,,,,Yampo,"2016-10-27 12:13:00",1
+4707,LKU,Lung Kwu Sheung Tan [Non-gazetted beach],"龍鼓上灘[非刊憲泳灘]","龙鼓上滩[非刊宪泳滩]",TMD,N07,LOP,*,,,,,,,Yampo,"2016-10-27 12:13:00",1
+4802,LM,Lung Mei [Non-gazetted beach] (Old),"龍尾[非刊憲泳灘](舊)","龙尾[非刊宪泳滩](旧)",TND,R31,TPK,*,,,,,,,Yampo,"2016-10-27 12:14:00",1
+4801,LMN,Lung Mei [Non-gazetted beach] (New),"龍尾[非刊憲泳灘](新)","龙尾[非刊宪泳滩](新)",TND,R31,TPK,*,,,,,,,Yampo,"2016-10-27 12:14:00",1
+4807,LMNC,Lung Mei [Non-gazetted beach] under construction,"龍尾[非刊憲泳灘]建築中","龙尾[非刊宪泳滩]建筑中",TND,R31,TPK,*,,,,,,,siwp12,"2019-01-24 14:16:00",1
+4302,LSS,Lo So Shing Beach,"蘆鬚城泳灘","芦须城泳滩",LAM,LAM,CMW,,,830651.261,807308.865,,,2,iwp45,"2012-08-08 09:41:00",1
+4002,MB,Middle Bay Beach,"中灣泳灘","中湾泳滩",HKS,H30,QUB,,,838440.784,810119.941,,,2,testuser,"2015-12-24 12:55:00",1
+4702,NC,Cafeteria New Beach,"新咖啡灣泳灘","新咖啡湾泳滩",TMD,N07,LOP,"",,816488.069,826186.283,,,7,Geomatics,"2011-03-03 01:57:00",1
+4703,OC,Cafeteria Old Beach,"舊咖啡灣泳灘","旧咖啡湾泳滩",TMD,N07,LOP,"",,816297.568,826210.009,,,7,Geomatics,"2011-03-03 01:57:00",1
+4404,PO,Pui O Beach,"貝澳泳灘","贝澳泳滩",LAN,N18,CMW,,,815571.119,811218.204,,,2,iwp45,"2012-08-08 09:41:00",1
+4509,PSC,Pak Sha Chau [Non-gazetted beach],"白沙洲[非刊憲泳灘]","白沙洲[非刊宪泳滩]",SKD,N15,KLW,*,,,,,,,Yampo,"2016-10-27 12:14:00",1
+4001,RB,Repulse Bay Beach,"淺水灣泳灘","浅水湾泳滩",HKS,H30,QUB,,,838165.829,810882.310,,,2,testuser,"2015-12-24 12:55:00",1
+4102,RKY,Rocky Bay Beach [Beach not open for swimming],"石澳後灘泳灘[泳灘不開放給市民游泳]","石澳后滩泳滩",HKE,H15,QUB,X,,844015.396,810329.087,,,2,testuser,"2014-12-12 09:11:00",1
+4003,SB,South Bay Beach,"南灣泳灘","南湾泳滩",HKS,H30,QUB,,,838398.711,809644.622,,,2,testuser,"2015-12-24 12:55:00",1
+4405,SIL,Silver Mine Bay Beach,"銀礦灣泳灘","银矿湾泳滩",LAN,N18,CMW,,,818101.496,814630.478,,,2,iwp45,"2012-08-08 09:43:00",1
+4803,SL,Sha Lan [Non-gazetted],"沙瀾[非刊憲泳灘]","沙澜[非刊宪泳滩]",TND,R31,TPK,*,,,,,,,Yampo,"2016-10-27 12:15:00",1
+4106,SM,Stanley Main Beach,"赤柱正灘泳灘","赤柱正滩泳滩",HKE,H15,QUB,"",,840153.602,809151.079,,,2,Geomatics,"2011-03-03 01:57:00",1
+4103,SO,Shek O Beach,"石澳泳灘","石澳泳滩",HKE,H15,QUB,"",,843937.853,809974.500,,,2,Geomatics,"2011-03-03 01:57:00",1
+4501,SS,Silverstrand Beach,"銀線灣泳灘","银线湾泳滩",SKD,R18,KLW,"",,846078.199,820441.782,,,3,Geomatics,"2011-03-03 01:57:00",1
+4004,SST,St. Stephen's Beach,"聖士提反灣泳灘","圣士提反湾泳滩",HKS,H15,QUB,"",,840187.296,808230.901,,,2,Geomatics,"2011-03-03 01:57:00",1
+4104,TC,Turtle Cove Beach,"龜背灣泳灘","龟背湾泳滩",HKE,H15,QUB,"",,841062.383,810448.162,,,2,Geomatics,"2011-03-03 01:57:00",1
+4401,TF,Tong Fuk Beach,"塘福泳灘","塘福泳滩",LAN,N18,CMW,,,811394.433,809916.380,,,2,iwp45,"2012-08-08 09:43:00",1
+4603,TK,Ting Kau Beach ,"汀九灣泳灘","汀九湾泳滩",TWD,N10,LOP,,,826266.836,825506.290,,,8,testuser,"2014-04-11 12:02:00",1
+4203,TKW,"Tai Kwai Wan Beach, Cheung Chau [Non-gazetted beac","長洲大貴灣[非刊憲泳灘]","长洲大贵湾[非刊宪泳滩]",CCD,N18,CMW,*,,,,,,,Yampo,"2016-10-27 12:15:00",1
+4805,TMT,Tai Mei Tuk Water Sports Centre (Before 3/2000),"大尾篤水上活動中心","大尾笃水上活动中心",TND,R31,TPK,@,,,,,,,Yampo,"2016-10-27 12:16:00",1
+4804,TMTSC,Tai Mei Tuk Water Sports Centre (From 3/2000),"大尾篤水上活動中心","大尾笃水上活动中心",TND,R31,TPK,@,,,,,,,Yampo,"2016-10-27 12:16:00",1
+4507,TRIO,Trio Beach,"三星灣泳灘","三星湾泳滩",SKD,N15,KLW,"",,,,,,,Geomatics,"2011-03-03 01:57:00",1
+4201,TW,Cheung Chau Tung Wan Beach,"長洲東灣泳灘","长洲东湾泳滩",CCD,N18,CMW,"",,821171.162,807955.003,,,2,Geomatics,"2011-03-03 01:57:00",1
+4601,TWM,Ma Wan Tung Wan Beach,"馬灣東灣泳灘","马湾东湾泳滩",TWD,N10,LOP,"",,824421.349,823475.324,,,8,Geomatics,"2011-03-03 01:57:00",1
+4511,WS,Wong Shek Water Sports Centre,"黃石水上活動中心","黄石水上活动中心",SKD,N15,KLW,@,,,,,,,Yampo,"2016-10-27 12:16:00",1

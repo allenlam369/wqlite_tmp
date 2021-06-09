@@ -1,0 +1,2 @@
+\encoding UTF8
+\COPY RIVER FROM 'C:\\Users\\SITO(WP)71\\Google Drive\\EPD\\dbMigration\\mssql_postgres\\ddl\\02\\river.txt'     WITH      DELIMITER AS ','    NULL AS ''        CSV QUOTE AS '"'             ESCAPE AS '"'

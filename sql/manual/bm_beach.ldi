@@ -1,0 +1,2 @@
+\encoding UTF8
+\COPY BM_BEACH FROM 'C:\\Allen\\EPD\\dbMigration\\mssql_postgres\\Export\\Tables\\01\\bm_beach.txt'     WITH      DELIMITER AS ','    NULL AS ''        CSV QUOTE AS '"'             ESCAPE AS '"'

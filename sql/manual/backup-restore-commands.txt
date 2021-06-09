@@ -1,0 +1,82 @@
+backup-restore commands
+
+"C:\Program Files\PostgreSQL\13\bin"\pg_dump -U postgres -W -F c wqplis > dump_localhost_wqplis.custom
+
+"C:\Program Files\PostgreSQL\13\bin"\pg_dump -U postgres -W -F t wqplis > dump_localhost_wqplis.tar
+
+
+export PGPASSWORD='postgres'
+psql -h localhost -U postgres -d wqplis < dump_localhost_wqplis.tar
+
+psql postgresql://postgres:postgres@localhost:5433/wqplis <dump_localhost_wqplis.tar
+
+"C:\Program Files\PostgreSQL\13\bin"\pg_dump --schema-only -U postgres -W -F p wqplis > dump_localhost_wqplis_schema.sql
+
+
+
+
+
+Inspirer SQLWays Wizard (butterfly)
+Select source, target,
+Select Database: tables each round with 100 tables; other objects one by one.
+automate by pulover's marco creator portable
+
+
+ALTER TABLE ONLY public.bm_beach ADD CONSTRAINT pk_beach PRIMARY KEY (beach_code);
+
+
+
+
+Backup db from DBeaver
+C:\Allen\EPD\dbMigration\backup_from_obelix_postgres
+
+
+
+
+
+Backup from pgAdmin4
+C:\Allen\EPD\dbMigration\backup_from_obelix_postgres
+
+- format: Custom
+- Encoding UTF8
+- rolename: postgres
+Dump options
+- pre-data, post-data, data
+- blobs yes
+Queries
+- include drop db, create db statements
+Misc
+- verbose messages
+
+
+
+In pgAdmin4, 
+- remove db
+- create db
+- restore, dump_localhost_wqplis.custom
+- with pre-data, post-data, data
+- clean before restore
+
+
+
+create tables referenced as foreign key:
+
+cd "C:\Users\SITO(WP)71\Google Drive\EPD\dbMigration\manual"
+
+call ten_zone.bat all
+call wpco_wcz.bat all
+call wpco_sz.bat all
+call river.bat all
+call rstation.bat all
+call mstation.bat all
+call bm_beach.bat all
+
+call bm_beach_ec_agm_rank_report.bat
+call bm_visit_label_summary.bat
+call marine_water2.bat
+call river_water2.bat
+call river_water_wqo_sum0.bat
+call rw_wqi_avg.bat
+call annual_wqi.bat
+
+
