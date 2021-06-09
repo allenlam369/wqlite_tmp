@@ -1,4 +1,4 @@
-CREATE OR REPLACE VIEW public.annual_wqi
+CREATE OR REPLACE VIEW public.rw_annual_wqi
 AS SELECT s.zone_,
     s.wcz,
     s.subzone,
