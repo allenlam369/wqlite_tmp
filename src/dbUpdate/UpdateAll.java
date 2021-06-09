@@ -93,6 +93,8 @@ public class UpdateAll {
 		em.getTransaction().commit();
 		em.close();
 		con.close();
+		
+		System.out.println("DONE");
 	}
 
 }
