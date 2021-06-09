@@ -28,7 +28,8 @@ public class UpdateRstation implements UpdateDbInterface {
 
 		String dbName = "rstation";
 		getAllFromMssql(con, em, dbName);
-
+		
+		em.getTransaction().commit();
 		em.close();
 		con.close();
 	}

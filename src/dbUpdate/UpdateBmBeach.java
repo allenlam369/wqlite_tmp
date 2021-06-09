@@ -30,6 +30,7 @@ public class UpdateBmBeach implements UpdateDbInterface {
 		String dbName = "bm_beach";
 		getAllFromMssql(con, em, dbName);
 
+		em.getTransaction().commit();
 		em.close();
 		con.close();
 	}
@@ -67,8 +68,6 @@ public class UpdateBmBeach implements UpdateDbInterface {
 					row.setValidDate(rs.getTimestamp("valid_date"));
 					row.setValidCode(rs.getBigDecimal("valid_code"));
 
-//					System.err.println(row.getSiteId());
-
 					em.merge(row);
 
 					if (i % 1000 == 0) {
@@ -78,9 +77,6 @@ public class UpdateBmBeach implements UpdateDbInterface {
 				} // while
 
 //				em.getTransaction().commit();
-
-//				System.err.println("row count: " + i);
-
 				return i;
 			}
 		} catch (SQLException e) {

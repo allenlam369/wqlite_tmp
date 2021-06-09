@@ -1,17 +1,21 @@
 package model;
 
 import java.io.Serializable;
-import javax.persistence.*;
 import java.math.BigDecimal;
 
+import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
 
 /**
  * The persistent class for the river_water2 database table.
  * 
  */
 @Entity
-@Table(name="river_water2")
-@NamedQuery(name="RiverWater2.findAll", query="SELECT r FROM RiverWater2 r")
+@Table(name = "river_water2")
+@NamedQuery(name = "RiverWater2.findAll", query = "SELECT r FROM RiverWater2 r")
 public class RiverWater2 implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -32,7 +36,7 @@ public class RiverWater2 implements Serializable {
 
 	private BigDecimal bod5;
 
-	@Column(name="bod5_pt")
+	@Column(name = "bod5_pt")
 	private BigDecimal bod5Pt;
 
 	private BigDecimal cd;
@@ -59,7 +63,7 @@ public class RiverWater2 implements Serializable {
 
 	private BigDecimal dos;
 
-	@Column(name="dos_pt")
+	@Column(name = "dos_pt")
 	private BigDecimal dosPt;
 
 	private BigDecimal ec;
@@ -76,163 +80,163 @@ public class RiverWater2 implements Serializable {
 
 	private BigDecimal hg;
 
-	@Column(name="l_ag")
+	@Column(name = "l_ag")
 	private String lAg;
 
-	@Column(name="l_al")
+	@Column(name = "l_al")
 	private String lAl;
 
-	@Column(name="l_arsenic")
+	@Column(name = "l_arsenic")
 	private String lArsenic;
 
-	@Column(name="l_b")
+	@Column(name = "l_b")
 	private String lB;
 
-	@Column(name="l_ba")
+	@Column(name = "l_ba")
 	private String lBa;
 
-	@Column(name="l_be")
+	@Column(name = "l_be")
 	private String lBe;
 
-	@Column(name="l_bod5")
+	@Column(name = "l_bod5")
 	private String lBod5;
 
-	@Column(name="l_cd")
+	@Column(name = "l_cd")
 	private String lCd;
 
-	@Column(name="l_chl")
+	@Column(name = "l_chl")
 	private String lChl;
 
-	@Column(name="l_cl")
+	@Column(name = "l_cl")
 	private String lCl;
 
-	@Column(name="l_cod")
+	@Column(name = "l_cod")
 	private String lCod;
 
-	@Column(name="l_cond")
+	@Column(name = "l_cond")
 	private String lCond;
 
-	@Column(name="l_cr")
+	@Column(name = "l_cr")
 	private String lCr;
 
-	@Column(name="l_cu")
+	@Column(name = "l_cu")
 	private String lCu;
 
-	@Column(name="l_deterg")
+	@Column(name = "l_deterg")
 	private String lDeterg;
 
-	@Column(name="l_do")
+	@Column(name = "l_do")
 	private String lDo;
 
-	@Column(name="l_dos")
+	@Column(name = "l_dos")
 	private String lDos;
 
-	@Column(name="l_ec")
+	@Column(name = "l_ec")
 	private String lEc;
 
-	@Column(name="l_fc")
+	@Column(name = "l_fc")
 	private String lFc;
 
-	@Column(name="l_fe")
+	@Column(name = "l_fe")
 	private String lFe;
 
-	@Column(name="l_fl")
+	@Column(name = "l_fl")
 	private String lFl;
 
-	@Column(name="l_h2s")
+	@Column(name = "l_h2s")
 	private String lH2s;
 
-	@Column(name="l_hg")
+	@Column(name = "l_hg")
 	private String lHg;
 
-	@Column(name="l_mn")
+	@Column(name = "l_mn")
 	private String lMn;
 
-	@Column(name="l_mo")
+	@Column(name = "l_mo")
 	private String lMo;
 
-	@Column(name="l_nh3")
+	@Column(name = "l_nh3")
 	private String lNh3;
 
-	@Column(name="l_nh4")
+	@Column(name = "l_nh4")
 	private String lNh4;
 
-	@Column(name="l_ni")
+	@Column(name = "l_ni")
 	private String lNi;
 
-	@Column(name="l_no2")
+	@Column(name = "l_no2")
 	private String lNo2;
 
-	@Column(name="l_no3")
+	@Column(name = "l_no3")
 	private String lNo3;
 
-	@Column(name="l_oil")
+	@Column(name = "l_oil")
 	private String lOil;
 
-	@Column(name="l_pb")
+	@Column(name = "l_pb")
 	private String lPb;
 
-	@Column(name="l_ph")
+	@Column(name = "l_ph")
 	private String lPh;
 
-	@Column(name="l_pheo")
+	@Column(name = "l_pheo")
 	private String lPheo;
 
-	@Column(name="l_po4")
+	@Column(name = "l_po4")
 	private String lPo4;
 
-	@Column(name="l_sal")
+	@Column(name = "l_sal")
 	private String lSal;
 
-	@Column(name="l_sb")
+	@Column(name = "l_sb")
 	private String lSb;
 
-	@Column(name="l_sil")
+	@Column(name = "l_sil")
 	private String lSil;
 
-	@Column(name="l_ss")
+	@Column(name = "l_ss")
 	private String lSs;
 
-	@Column(name="l_ssp")
+	@Column(name = "l_ssp")
 	private String lSsp;
 
-	@Column(name="l_sulp")
+	@Column(name = "l_sulp")
 	private String lSulp;
 
-	@Column(name="l_tcyn")
+	@Column(name = "l_tcyn")
 	private String lTcyn;
 
-	@Column(name="l_tkns")
+	@Column(name = "l_tkns")
 	private String lTkns;
 
-	@Column(name="l_tknsp")
+	@Column(name = "l_tknsp")
 	private String lTknsp;
 
-	@Column(name="l_tl")
+	@Column(name = "l_tl")
 	private String lTl;
 
-	@Column(name="l_toc")
+	@Column(name = "l_toc")
 	private String lToc;
 
-	@Column(name="l_tps")
+	@Column(name = "l_tps")
 	private String lTps;
 
-	@Column(name="l_tpsp")
+	@Column(name = "l_tpsp")
 	private String lTpsp;
 
-	@Column(name="l_ts")
+	@Column(name = "l_ts")
 	private String lTs;
 
-	@Column(name="l_turb")
+	@Column(name = "l_turb")
 	private String lTurb;
 
-	@Column(name="l_tvs")
+	@Column(name = "l_tvs")
 	private String lTvs;
 
-	@Column(name="l_v")
+	@Column(name = "l_v")
 	private String lV;
 
-	@Column(name="l_zn")
+	@Column(name = "l_zn")
 	private String lZn;
 
 	private BigDecimal mn;
@@ -243,7 +247,7 @@ public class RiverWater2 implements Serializable {
 
 	private BigDecimal nh4;
 
-	@Column(name="nh4_pt")
+	@Column(name = "nh4_pt")
 	private BigDecimal nh4Pt;
 
 	private BigDecimal ni;
@@ -270,7 +274,7 @@ public class RiverWater2 implements Serializable {
 
 	private BigDecimal sal;
 
-	@Column(name="sample_no")
+	@Column(name = "sample_no")
 	private Integer sampleNo;
 
 	private BigDecimal sb;
@@ -327,20 +331,15 @@ public class RiverWater2 implements Serializable {
 
 	private BigDecimal width;
 
-	@Column(name="wqi_grade")
+	@Column(name = "wqi_grade")
 	private String wqiGrade;
 
-	@Column(name="wqi_pt")
+	@Column(name = "wqi_pt")
 	private BigDecimal wqiPt;
 
 	private BigDecimal zn;
 
 	private String zone;
-
-	//bi-directional many-to-one association to Rstation
-	@ManyToOne(optional=false)
-	@JoinColumn(name="statname", insertable=false, updatable=false)
-	private Rstation rstation;
 
 	public RiverWater2() {
 	}
@@ -1391,14 +1390,6 @@ public class RiverWater2 implements Serializable {
 
 	public void setZone(String zone) {
 		this.zone = zone;
-	}
-
-	public Rstation getRstation() {
-		return this.rstation;
-	}
-
-	public void setRstation(Rstation rstation) {
-		this.rstation = rstation;
 	}
 
 }

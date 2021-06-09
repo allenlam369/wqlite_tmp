@@ -53,6 +53,7 @@ public class UpdateBeachRankReport implements UpdateDbInterface {
 //			getRowsFromMssql(2010);
 		}
 
+		em.getTransaction().commit();
 		em.close();
 		con.close();
 
@@ -93,7 +94,7 @@ public class UpdateBeachRankReport implements UpdateDbInterface {
 
 //					System.err.println(pk);
 
-					em.persist(report);
+					em.merge(report);
 
 					if (i % 1000 == 0) {
 						em.flush();

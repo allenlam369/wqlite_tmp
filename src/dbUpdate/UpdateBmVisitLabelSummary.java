@@ -8,13 +8,31 @@ import java.sql.Statement;
 import javax.persistence.EntityManager;
 
 import model.BmVisitLabelSummary;
-import model.BmVisitLabelSummaryPK;
 
 public class UpdateBmVisitLabelSummary implements UpdateDbInterface {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	static Connection con; // for mssql
+	static private EntityManager em = EntityManagerUtil.getEntityManager(); // for postgres
 
+	public static void main(String[] args) throws SQLException {
+		UpdateBmVisitLabelSummary me = new UpdateBmVisitLabelSummary();
+		me.run();
+	}
+
+	void run() throws SQLException {
+		// for mssql
+		if (con == null) {
+			con = ConnectMssql.getConnection();
+		}
+		// for postgres
+		em.getTransaction().begin(); // only need to do it once
+
+		String dbName = "bm_visit_label_summary";
+		getAllFromMssql(con, em, dbName);
+
+		em.getTransaction().commit();
+		em.close();
+		con.close();
 	}
 
 	@Override
@@ -43,12 +61,8 @@ public class UpdateBmVisitLabelSummary implements UpdateDbInterface {
 					row.setMdate(rs.getTimestamp("mdate"));
 					row.setStime(rs.getBigDecimal("stime"));
 					row.setSampleNo(rs.getBigDecimal("sample_no"));
-
-					BmVisitLabelSummaryPK pk = new BmVisitLabelSummaryPK();
-					pk.setBeachCode(rs.getString("beach_code"));
-					pk.setSampleDate(rs.getDate("sample_date"));
-
-					row.setId(pk);
+					row.setBeachCode(rs.getString("beach_code"));
+					row.setSampleDate(rs.getTimestamp("sample_date"));
 					row.setSampleTime(rs.getString("sample_time"));
 					row.setTemper(rs.getBigDecimal("temper"));
 					row.setDo_(rs.getBigDecimal("do"));
@@ -65,7 +79,7 @@ public class UpdateBmVisitLabelSummary implements UpdateDbInterface {
 					row.setClimateValue(rs.getBigDecimal("climate_value"));
 					row.setSeaClarityValue(rs.getBigDecimal("sea_clarity_value"));
 					row.setSeaConditionValue(rs.getBigDecimal("sea_condition_value"));
-					row.setWindDirection(rs.getString("win_direction"));
+					row.setWindDirection(rs.getString("wind_direction"));
 					row.setBatherValue(rs.getBigDecimal("bather_value"));
 					row.setTideValue(rs.getBigDecimal("tide_value"));
 					row.setTideRatio(rs.getBigDecimal("tide_ratio"));
@@ -119,30 +133,57 @@ public class UpdateBmVisitLabelSummary implements UpdateDbInterface {
 					row.setFcF3(rs.getBigDecimal("fc_f3"));
 					row.setFcF4(rs.getBigDecimal("fc_f4"));
 					row.setFcF5(rs.getBigDecimal("fc_f5"));
-
 					row.setGMean(rs.getBigDecimal("g_mean"));
 					row.setRGMean(rs.getBigDecimal("r_g_mean"));
 					row.setLogGMean(rs.getBigDecimal("log_g_mean"));
 					row.setAdjLogGm(rs.getBigDecimal("adj_log_gm"));
 					row.setMthGMean(rs.getBigDecimal("mth_g_mean"));
 					row.setWkGMean(rs.getBigDecimal("wk_g_mean"));
-					
 					row.setGMeanFc(rs.getBigDecimal("g_mean_fc"));
 					row.setRGMeanFc(rs.getBigDecimal("r_g_mean_fc"));
 					row.setLogGMeanFc(rs.getBigDecimal("log_g_mean_fc"));
 					row.setAdjLogGmFc(rs.getBigDecimal("adj_log_gm_fc"));
 					row.setMthGMeanFc(rs.getBigDecimal("mth_g_mean_fc"));
 					row.setWkGMeanFc(rs.getBigDecimal("wk_g_mean_fc"));
-					row.setMovAvg(rs.getBigDecimal("mov_avg"));
-					row.setMovAvgFc(rs.getBigDecimal("mov_avg_fc"));
+					row.setMoveAvg(rs.getBigDecimal("move_avg"));
+					row.setMoveAvgFc(rs.getBigDecimal("move_avg_fc"));
 					row.setGrade(rs.getBigDecimal("grade"));
 					row.setGradeChange(rs.getBigDecimal("grade_change"));
-					
-					
-					
-					
+					row.setRemarks(rs.getString("remarks"));
+					row.setDayappend(rs.getTimestamp("dayappend"));
+					row.setDayedit(rs.getTimestamp("dayedit"));
+					row.setDayupload(rs.getTimestamp("dayupload"));
 					row.setRainStationCode(rs.getString("rain_station_code"));
+					row.setSdatetime(rs.getTimestamp("sdatetime"));
+					row.setRainfall(rs.getBigDecimal("rainfall"));
+					row.setRainfallMax3hr(rs.getBigDecimal("rainfall_max_3hr"));
+					row.setRainfallMaxTime(rs.getTimestamp("rainfall_max_time"));
+					row.setRainfallLast12hr(rs.getBigDecimal("rainfall_last_12hr"));
+					row.setRainfallLast24hr(rs.getBigDecimal("rainfall_last_24hr"));
+					row.setRainfallLast72hr(rs.getBigDecimal("rainfall_last_72hr"));
+					row.setRiskRainMax3hr(rs.getString("risk_rain_max_3hr"));
+					row.setRiskRainLast12hr(rs.getString("risk_rain_last_12hr"));
+					row.setRiskRainLast24hr(rs.getString("risk_rain_last_24hr"));
+					row.setRiskRainLast72hr(rs.getString("risk_rain_last_72hr"));
+					row.setWeather(rs.getString("weather"));
+					row.setWind(rs.getString("wind"));
+					row.setClimate(rs.getString("climate"));
+					row.setSeaClarity(rs.getString("sea_clarity"));
+					row.setSeaCondition(rs.getString("sea_condition"));
+					row.setBather(rs.getString("bather"));
+					row.setTide(rs.getString("tide"));
+					row.setFlowLabelS1(rs.getString("flow_label_s1"));
+					row.setFlowLabelS2(rs.getString("flow_label_s2"));
+					row.setFlowLabelS3(rs.getString("flow_label_s3"));
+					row.setFlowLabelS4(rs.getString("flow_label_s4"));
+					row.setFlowLabelS5(rs.getString("flow_label_s5"));
+					row.setFlowLabelF1(rs.getString("flow_label_f1"));
+					row.setFlowLabelF2(rs.getString("flow_label_f2"));
+					row.setFlowLabelF3(rs.getString("flow_label_f3"));
+					row.setFlowLabelF4(rs.getString("flow_label_f4"));
+					row.setFlowLabelF5(rs.getString("flow_label_f5"));
 					row.setTideStationCode(rs.getString("tide_station_code"));
+					row.setMrefuseCleanlinesLevel(rs.getBigDecimal("mrefuse_cleanlines_level"));
 
 					em.merge(row);
 

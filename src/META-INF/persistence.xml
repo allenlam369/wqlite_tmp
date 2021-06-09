@@ -4,8 +4,6 @@
 		<class>model.BmBeach</class>
 		<class>model.BmBeachEcAgmRankReport</class>
 		<class>model.BmBeachEcAgmRankReportPK</class>
-		<class>model.BmVisitLabelSummary</class>
-		<class>model.BmVisitLabelSummaryPK</class>
 		<class>model.MarineWater2</class>
 		<class>model.MarineWater2PK</class>
 		<class>model.Mstation</class>
@@ -20,6 +18,7 @@
 		<class>model.TenZone</class>
 		<class>model.WpcoSz</class>
 		<class>model.WpcoWcz</class>
+		<class>model.BmVisitLabelSummary</class>
 
 			<properties>
 			<property name="hibernate.archive.autodetection"

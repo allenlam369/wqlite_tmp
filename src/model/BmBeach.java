@@ -4,7 +4,6 @@ import java.io.Serializable;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
-import java.util.List;
 
 
 /**
@@ -66,14 +65,6 @@ public class BmBeach implements Serializable {
 
 	@Column(name="wcz_code")
 	private BigDecimal wczCode;
-
-	//bi-directional many-to-one association to BmBeachEcAgmRankReport
-	@OneToMany(mappedBy="bmBeach")
-	private List<BmBeachEcAgmRankReport> bmBeachEcAgmRankReports;
-
-	//bi-directional many-to-one association to BmVisitLabelSummary
-	@OneToMany(mappedBy="bmBeach")
-	private List<BmVisitLabelSummary> bmVisitLabelSummaries;
 
 	public BmBeach() {
 	}
@@ -220,50 +211,6 @@ public class BmBeach implements Serializable {
 
 	public void setWczCode(BigDecimal wczCode) {
 		this.wczCode = wczCode;
-	}
-
-	public List<BmBeachEcAgmRankReport> getBmBeachEcAgmRankReports() {
-		return this.bmBeachEcAgmRankReports;
-	}
-
-	public void setBmBeachEcAgmRankReports(List<BmBeachEcAgmRankReport> bmBeachEcAgmRankReports) {
-		this.bmBeachEcAgmRankReports = bmBeachEcAgmRankReports;
-	}
-
-	public BmBeachEcAgmRankReport addBmBeachEcAgmRankReport(BmBeachEcAgmRankReport bmBeachEcAgmRankReport) {
-		getBmBeachEcAgmRankReports().add(bmBeachEcAgmRankReport);
-		bmBeachEcAgmRankReport.setBmBeach(this);
-
-		return bmBeachEcAgmRankReport;
-	}
-
-	public BmBeachEcAgmRankReport removeBmBeachEcAgmRankReport(BmBeachEcAgmRankReport bmBeachEcAgmRankReport) {
-		getBmBeachEcAgmRankReports().remove(bmBeachEcAgmRankReport);
-		bmBeachEcAgmRankReport.setBmBeach(null);
-
-		return bmBeachEcAgmRankReport;
-	}
-
-	public List<BmVisitLabelSummary> getBmVisitLabelSummaries() {
-		return this.bmVisitLabelSummaries;
-	}
-
-	public void setBmVisitLabelSummaries(List<BmVisitLabelSummary> bmVisitLabelSummaries) {
-		this.bmVisitLabelSummaries = bmVisitLabelSummaries;
-	}
-
-	public BmVisitLabelSummary addBmVisitLabelSummary(BmVisitLabelSummary bmVisitLabelSummary) {
-		getBmVisitLabelSummaries().add(bmVisitLabelSummary);
-		bmVisitLabelSummary.setBmBeach(this);
-
-		return bmVisitLabelSummary;
-	}
-
-	public BmVisitLabelSummary removeBmVisitLabelSummary(BmVisitLabelSummary bmVisitLabelSummary) {
-		getBmVisitLabelSummaries().remove(bmVisitLabelSummary);
-		bmVisitLabelSummary.setBmBeach(null);
-
-		return bmVisitLabelSummary;
 	}
 
 }

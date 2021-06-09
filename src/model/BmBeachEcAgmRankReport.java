@@ -60,11 +60,6 @@ public class BmBeachEcAgmRankReport implements Serializable {
 	@Column(name="sc_name")
 	private String scName;
 
-	//bi-directional many-to-one association to BmBeach
-	@ManyToOne
-	@JoinColumn(name="beach_code", insertable=false, updatable=false)
-	private BmBeach bmBeach;
-
 	public BmBeachEcAgmRankReport() {
 	}
 
@@ -186,14 +181,6 @@ public class BmBeachEcAgmRankReport implements Serializable {
 
 	public void setScName(String scName) {
 		this.scName = scName;
-	}
-
-	public BmBeach getBmBeach() {
-		return this.bmBeach;
-	}
-
-	public void setBmBeach(BmBeach bmBeach) {
-		this.bmBeach = bmBeach;
 	}
 
 }

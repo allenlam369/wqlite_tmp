@@ -64,7 +64,7 @@ public class UpdateAll {
 		u = new UpdateBmBeach();
 		count = u.getAllFromMssql(con, em, dbName7);
 		System.out.println(dbName7 + " " + count);
-		
+
 		u = new UpdateBeachRankReport();
 		count = u.getAllFromMssql(con, em, dbName8);
 		System.out.println(dbName8 + " " + count);
@@ -73,12 +73,21 @@ public class UpdateAll {
 		count = u.getAllFromMssql(con, em, dbName9);
 		System.out.println(dbName9 + " " + count);
 
-		
-//		UpdateMstation me22 = new UpdateMstation();
-//		me22.run();
-//
-//		UpdateBeachRankReport me33 = new UpdateBeachRankReport();
-//		me33.run();
+		u = new UpdateMarineWater2();
+		count = u.getAllFromMssql(con, em, dbName10);
+		System.out.println(dbName10 + " " + count);
+
+		u = new UpdateRiverWater2();
+		count = u.getAllFromMssql(con, em, dbName11);
+		System.out.println(dbName11 + " " + count);
+
+		u = new UpdateRiverWaterWqoSum0();
+		count = u.getAllFromMssql(con, em, dbName12);
+		System.out.println(dbName12 + " " + count);
+
+		u = new UpdateRwWqiAvg();
+		count = u.getAllFromMssql(con, em, dbName13);
+		System.out.println(dbName13 + " " + count);
 
 		// --------------------------------------------------------------
 		em.getTransaction().commit();

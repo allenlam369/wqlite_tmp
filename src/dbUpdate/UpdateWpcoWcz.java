@@ -29,6 +29,7 @@ public class UpdateWpcoWcz implements UpdateDbInterface {
 		String dbName = "wpco_wcz";
 		getAllFromMssql(con, em, dbName);
 
+		em.getTransaction().commit();
 		em.close();
 		con.close();
 	}

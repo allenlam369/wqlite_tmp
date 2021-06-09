@@ -16,8 +16,9 @@ import java.sql.Timestamp;
 public class BmVisitLabelSummary implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@EmbeddedId
-	private BmVisitLabelSummaryPK id;
+	@Id
+	@Column(name="bmvisit_id")
+	private String bmvisitId;
 
 	@Column(name="abs_tide_height")
 	private BigDecimal absTideHeight;
@@ -33,14 +34,14 @@ public class BmVisitLabelSummary implements Serializable {
 	@Column(name="bather_value")
 	private BigDecimal batherValue;
 
+	@Column(name="beach_code")
+	private String beachCode;
+
 	@Column(name="beach_group")
 	private String beachGroup;
 
 	@Column(name="beach_name")
 	private String beachName;
-
-	@Column(name="bmvisit_id")
-	private String bmvisitId;
 
 	private String climate;
 
@@ -231,11 +232,11 @@ public class BmVisitLabelSummary implements Serializable {
 
 	private Timestamp mdate;
 
-	@Column(name="mov_avg")
-	private BigDecimal movAvg;
+	@Column(name="move_avg")
+	private BigDecimal moveAvg;
 
-	@Column(name="mov_avg_fc")
-	private BigDecimal movAvgFc;
+	@Column(name="move_avg_fc")
+	private BigDecimal moveAvgFc;
 
 	@Column(name="mrefuse_cleanlines_level")
 	private BigDecimal mrefuseCleanlinesLevel;
@@ -347,6 +348,9 @@ public class BmVisitLabelSummary implements Serializable {
 	@Column(name="sal_s5_2")
 	private BigDecimal salS52;
 
+	@Column(name="sample_date")
+	private Timestamp sampleDate;
+
 	@Column(name="sample_no")
 	private BigDecimal sampleNo;
 
@@ -409,20 +413,15 @@ public class BmVisitLabelSummary implements Serializable {
 	@Column(name="wk_g_mean_fc")
 	private BigDecimal wkGMeanFc;
 
-	//bi-directional many-to-one association to BmBeach
-	@ManyToOne
-	@JoinColumn(name="beach_code", insertable=false, updatable=false)
-	private BmBeach bmBeach;
-
 	public BmVisitLabelSummary() {
 	}
 
-	public BmVisitLabelSummaryPK getId() {
-		return this.id;
+	public String getBmvisitId() {
+		return this.bmvisitId;
 	}
 
-	public void setId(BmVisitLabelSummaryPK id) {
-		this.id = id;
+	public void setBmvisitId(String bmvisitId) {
+		this.bmvisitId = bmvisitId;
 	}
 
 	public BigDecimal getAbsTideHeight() {
@@ -465,6 +464,14 @@ public class BmVisitLabelSummary implements Serializable {
 		this.batherValue = batherValue;
 	}
 
+	public String getBeachCode() {
+		return this.beachCode;
+	}
+
+	public void setBeachCode(String beachCode) {
+		this.beachCode = beachCode;
+	}
+
 	public String getBeachGroup() {
 		return this.beachGroup;
 	}
@@ -479,14 +486,6 @@ public class BmVisitLabelSummary implements Serializable {
 
 	public void setBeachName(String beachName) {
 		this.beachName = beachName;
-	}
-
-	public String getBmvisitId() {
-		return this.bmvisitId;
-	}
-
-	public void setBmvisitId(String bmvisitId) {
-		this.bmvisitId = bmvisitId;
 	}
 
 	public String getClimate() {
@@ -1017,20 +1016,20 @@ public class BmVisitLabelSummary implements Serializable {
 		this.mdate = mdate;
 	}
 
-	public BigDecimal getMovAvg() {
-		return this.movAvg;
+	public BigDecimal getMoveAvg() {
+		return this.moveAvg;
 	}
 
-	public void setMovAvg(BigDecimal movAvg) {
-		this.movAvg = movAvg;
+	public void setMoveAvg(BigDecimal moveAvg) {
+		this.moveAvg = moveAvg;
 	}
 
-	public BigDecimal getMovAvgFc() {
-		return this.movAvgFc;
+	public BigDecimal getMoveAvgFc() {
+		return this.moveAvgFc;
 	}
 
-	public void setMovAvgFc(BigDecimal movAvgFc) {
-		this.movAvgFc = movAvgFc;
+	public void setMoveAvgFc(BigDecimal moveAvgFc) {
+		this.moveAvgFc = moveAvgFc;
 	}
 
 	public BigDecimal getMrefuseCleanlinesLevel() {
@@ -1337,6 +1336,14 @@ public class BmVisitLabelSummary implements Serializable {
 		this.salS52 = salS52;
 	}
 
+	public Timestamp getSampleDate() {
+		return this.sampleDate;
+	}
+
+	public void setSampleDate(Timestamp sampleDate) {
+		this.sampleDate = sampleDate;
+	}
+
 	public BigDecimal getSampleNo() {
 		return this.sampleNo;
 	}
@@ -1519,14 +1526,6 @@ public class BmVisitLabelSummary implements Serializable {
 
 	public void setWkGMeanFc(BigDecimal wkGMeanFc) {
 		this.wkGMeanFc = wkGMeanFc;
-	}
-
-	public BmBeach getBmBeach() {
-		return this.bmBeach;
-	}
-
-	public void setBmBeach(BmBeach bmBeach) {
-		this.bmBeach = bmBeach;
 	}
 
 }

@@ -30,6 +30,7 @@ public class UpdateRiver implements UpdateDbInterface {
 		String dbName = "river";
 		getAllFromMssql(con, em, dbName);
 
+		em.getTransaction().commit();
 		em.close();
 		con.close();
 	}

@@ -30,6 +30,7 @@ public class UpdateTenZone implements UpdateDbInterface {
 		String dbName = "ten_zone";
 		getAllFromMssql(con, em, dbName);
 
+		em.getTransaction().commit();
 		em.close();
 		con.close();
 	}
