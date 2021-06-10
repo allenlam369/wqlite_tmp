@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Timestamp;
 
 import javax.persistence.EntityManager;
 
@@ -28,7 +29,8 @@ public class UpdateRiverWaterWqoSum0 implements UpdateDbInterface {
 		em.getTransaction().begin(); // only need to do it once
 
 		String dbName = "river_water_wqo_sum0";
-		int count = getAllFromMssql(con, em, dbName);
+		String sql = Utils.getAllSql(dbName);
+		int count = updateAllFromMssql(con, em, sql);
 
 		System.err.println("count = " + count);
 
@@ -37,12 +39,22 @@ public class UpdateRiverWaterWqoSum0 implements UpdateDbInterface {
 		con.close();
 	}
 
-	public int getAllFromMssql(Connection con, EntityManager em, String dbName) {
+	public int incrementalUpdateFromMssql(Connection con, EntityManager em, String sql) {
+		int count = 0;
+		if (con != null) {
+			int yr = Utils.getCurrentYear();
+			sql += " where yr >= " + (yr - 2);
+			System.err.println(sql);
+			count = updateAllFromMssql(con, em, sql);
+		}
+		return count;
+	}
+
+	public int updateAllFromMssql(Connection con, EntityManager em, String sql) {
 		try {
 			if (con != null) {
 
 				Statement stmt = con.createStatement();
-				String sql = "select * from wpg." + dbName;
 				ResultSet rs = stmt.executeQuery(sql);
 
 				int i = 0;

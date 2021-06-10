@@ -28,20 +28,24 @@ public class UpdateBmBeach implements UpdateDbInterface {
 		em.getTransaction().begin(); // only need to do it once
 
 		String dbName = "bm_beach";
-		getAllFromMssql(con, em, dbName);
+		String sql = Utils.getAllSql(dbName);
+		updateAllFromMssql(con, em, sql);
 
 		em.getTransaction().commit();
 		em.close();
 		con.close();
 	}
 
+	public int incrementalUpdateFromMssql(Connection con, EntityManager em, String sql) {
+		return updateAllFromMssql(con, em, sql);
+	}
+
 	// read all rows from mssql table; update to postgres table
-	public int getAllFromMssql(Connection con, EntityManager em, String dbName) {
+	public int updateAllFromMssql(Connection con, EntityManager em, String sql) {
 		try {
 			if (con != null) {
 
 				Statement stmt = con.createStatement();
-				String sql = "select * from wpg." + dbName;
 				ResultSet rs = stmt.executeQuery(sql);
 
 				int i = 0;

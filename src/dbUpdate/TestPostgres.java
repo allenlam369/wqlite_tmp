@@ -3,7 +3,8 @@ package dbUpdate;
 import java.util.List;
 
 import javax.persistence.EntityManager;
-import javax.persistence.Query;
+
+import model.Rstation;
 
 public class TestPostgres {
 	static private EntityManager em = EntityManagerUtil.getEntityManager(); // for postgres
@@ -24,12 +25,20 @@ public class TestPostgres {
 		em.close();
 	}
 
-	private static boolean isExist(String tableName, String idName, int id) {
+	private static boolean isExist(String tableName, String idName, long id) {
 		try {
-			Query q = em.createQuery("SELECT e." + idName + " FROM " + tableName + " e WHERE e." + idName + " = :id");
-			q.setParameter("id", id);
-			@SuppressWarnings({ "rawtypes" })
-			List list = q.getResultList();
+			String sql = "SELECT e.siteId FROM Rstation e WHERE e.siteId = :id";
+
+			List<Rstation> list = em.createQuery(sql).setParameter("id", id).getResultList();
+
+
+//			javax.persistence.TypedQuery<Rstation> q = em.createNamedQuery("Rstation.findAll", Rstation.class);
+//			List<Rstation> list = q.getResultList();
+
+			System.err.println("list size " + list.size());
+
+//			@SuppressWarnings({ "rawtypes" })
+//			List list = q.getResultList();
 
 			return !list.isEmpty();
 

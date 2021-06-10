@@ -38,62 +38,68 @@ public class UpdateAll {
 		UpdateDbInterface u;
 
 		u = new UpdateTenZone();
-		count = u.getAllFromMssql(con, em, dbName1);
+
+		count = u.updateAllFromMssql(con, em, Utils.getAllSql(dbName1));
 		System.out.println(dbName1 + " " + count);
 
 		u = new UpdateWpcoWcz();
-		count = u.getAllFromMssql(con, em, dbName2);
+		count = u.updateAllFromMssql(con, em, Utils.getAllSql(dbName2));
 		System.out.println(dbName2 + " " + count);
 
 		u = new UpdateWpcoSz();
-		count = u.getAllFromMssql(con, em, dbName3);
+		count = u.updateAllFromMssql(con, em, Utils.getAllSql(dbName3));
 		System.out.println(dbName3 + " " + count);
 
 		u = new UpdateRiver();
-		count = u.getAllFromMssql(con, em, dbName4);
+		count = u.updateAllFromMssql(con, em, Utils.getAllSql(dbName4));
 		System.out.println(dbName4 + " " + count);
 
 		u = new UpdateRstation();
-		count = u.getAllFromMssql(con, em, dbName5);
+		count = u.updateAllFromMssql(con, em, Utils.getAllSql(dbName5));
 		System.out.println(dbName5 + " " + count);
 
 		u = new UpdateMstation();
-		count = u.getAllFromMssql(con, em, dbName6);
+		count = u.updateAllFromMssql(con, em, Utils.getAllSql(dbName6));
 		System.out.println(dbName6 + " " + count);
 
 		u = new UpdateBmBeach();
-		count = u.getAllFromMssql(con, em, dbName7);
+		count = u.updateAllFromMssql(con, em, Utils.getAllSql(dbName7));
 		System.out.println(dbName7 + " " + count);
 
 		u = new UpdateBeachRankReport();
-		count = u.getAllFromMssql(con, em, dbName8);
+		count = u.updateAllFromMssql(con, em, Utils.getAllSql(dbName8));
 		System.out.println(dbName8 + " " + count);
 
+		// incremental update
 		u = new UpdateBmVisitLabelSummary();
-		count = u.getAllFromMssql(con, em, dbName9);
+		count = u.incrementalUpdateFromMssql(con, em, Utils.getAllSql(dbName9));
 		System.out.println(dbName9 + " " + count);
 
+		// incremental update
 		u = new UpdateMarineWater2();
-		count = u.getAllFromMssql(con, em, dbName10);
+		count = u.incrementalUpdateFromMssql(con, em, Utils.getAllSql(dbName10));
 		System.out.println(dbName10 + " " + count);
 
+		// incremental update
 		u = new UpdateRiverWater2();
-		count = u.getAllFromMssql(con, em, dbName11);
+		count = u.incrementalUpdateFromMssql(con, em, Utils.getAllSql(dbName11));
 		System.out.println(dbName11 + " " + count);
 
+		// incremental update
 		u = new UpdateRiverWaterWqoSum0();
-		count = u.getAllFromMssql(con, em, dbName12);
+		count = u.incrementalUpdateFromMssql(con, em, Utils.getAllSql(dbName12));
 		System.out.println(dbName12 + " " + count);
 
+		// incremental update
 		u = new UpdateRwWqiAvg();
-		count = u.getAllFromMssql(con, em, dbName13);
+		count = u.incrementalUpdateFromMssql(con, em, Utils.getAllSql(dbName13));
 		System.out.println(dbName13 + " " + count);
 
 		// --------------------------------------------------------------
 		em.getTransaction().commit();
 		em.close();
 		con.close();
-		
+
 		System.out.println("DONE");
 	}
 

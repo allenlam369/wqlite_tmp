@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Timestamp;
 
 import javax.persistence.EntityManager;
 
@@ -28,20 +29,46 @@ public class UpdateRiverWater2 implements UpdateDbInterface {
 		em.getTransaction().begin(); // only need to do it once
 
 		String dbName = "river_water2";
-		int rows = getAllFromMssql(con, em, dbName);
+		String sql = Utils.getAllSql(dbName);
+		int rows = updateAllFromMssql(con, em, sql);
 		System.out.println("rows = " + rows);
-		
+
 		em.getTransaction().commit();
 		em.close();
 		con.close();
 	}
 
-	public int getAllFromMssql(Connection con, EntityManager em, String dbName) {
+	public int incrementalUpdateFromMssql(Connection con, EntityManager em, String sql) {
+		int count = 0;
+		try {
+			Timestamp ts2 = null;
+			if (con != null) {
+				Statement stmt = con.createStatement();
+				String sql1 = "SELECT top 1 mdate FROM WPG.river_water2 order by mdate DESC";
+				ResultSet rs = stmt.executeQuery(sql1);
+
+				// Iterate through the data in the result set and display it.
+				if (rs.next()) {
+					Timestamp ts = rs.getTimestamp("mdate");
+					ts2 = Utils.previous2Years(ts);
+				}
+
+				sql += " where mdate >= '" + ts2 + "'";
+				System.err.println(sql);
+
+				count = updateAllFromMssql(con, em, sql);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return count;
+	}
+
+	public int updateAllFromMssql(Connection con, EntityManager em, String sql) {
 		try {
 			if (con != null) {
 
 				Statement stmt = con.createStatement();
-				String sql = "select * from wpg." + dbName;
 				ResultSet rs = stmt.executeQuery(sql);
 
 				int i = 0;

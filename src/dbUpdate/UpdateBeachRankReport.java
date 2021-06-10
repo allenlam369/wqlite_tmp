@@ -34,14 +34,14 @@ public class UpdateBeachRankReport implements UpdateDbInterface {
 		em.getTransaction().begin(); // only need to do it once
 
 		String dbName = "BmBeachEcAgmRankReport";
-
+		String sql = Utils.getAllSql(dbName);
 		// lastUpdateDate found in postgres table
-		Timestamp ts = getLastUpdateDateFromPostgres(dbName);
+		Timestamp ts = getLastUpdateDateFromPostgres(sql);
 		System.out.println("Timestamp=" + ts);
 
 		// postgres table is empty
 		if (ts == null) {
-			getAllFromMssql(con, em, dbName);
+			updateAllFromMssql(con, em, dbName);
 		}
 
 		// there are existing rows in postgres
@@ -59,12 +59,15 @@ public class UpdateBeachRankReport implements UpdateDbInterface {
 
 	}
 
-	public int getAllFromMssql(Connection con, EntityManager em, String dbName) {
+	public int incrementalUpdateFromMssql(Connection con, EntityManager em, String sql) {
+		return updateAllFromMssql(con, em, sql);
+	}
+
+	public int updateAllFromMssql(Connection con, EntityManager em, String sql) {
 		try {
 			if (con != null) {
 
 				Statement stmt = con.createStatement();
-				String sql = "select * from wpg." + dbName;
 				ResultSet rs = stmt.executeQuery(sql);
 
 				int i = 0;
