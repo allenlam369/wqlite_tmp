@@ -28,7 +28,7 @@
 			<property name="hibernate.connection.driver_class"
 				value="org.postgresql.Driver" />
 			<property name="hibernate.connection.url"
-				value="jdbc:postgresql://10.17.106.90:5432/wqplis_lite" />
+				value="jdbc:postgresql://localhost:5432/wqplis_lite" />
 			<property name="hibernate.connection.username"
 				value="postgres" />
 			<property name="hibernate.connection.password"
