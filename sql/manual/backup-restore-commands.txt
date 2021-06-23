@@ -12,8 +12,34 @@ psql postgresql://postgres:postgres@localhost:5433/wqplis <dump_localhost_wqplis
 
 "C:\Program Files\PostgreSQL\13\bin"\pg_dump --schema-only -U postgres -W -F p wqplis > dump_localhost_wqplis_schema.sql
 
+=============================
+How to create a new table from view
 
+1. write DDL sql (model on an existing sql if available)
+2. exec sql to create table in db
+3. write db update_all java program, to download data
+4. write db update_incremental java program, to inc update
+5. update updateAll java program to include the new table
 
+TASK: create river_water1 table from mssql view
+1. model on existing sql: C:\Users\SITO(WP)71\Google Drive\EPD\Eclipse\ee\WQ_lite\sql\manual\river_water2_ddl.sql
+	create river_water1_ddl.sql
+
+2. also create river_water1.bat, to exec the sql in local postgres
+3. run pgAdmin, edit SQL tool, copy n paste the CREATE TABLE statement to tool, exec to create table
+
+4. In Eclipse ee, WQ_lite project,
+	right click project name, JPA tools, Generate Entities from Tables
+	select river_water1 table, Finish
+	RiverWater1.java and RiverWater1PK.java are created in model folder
+
+5. Write Class UpdateRiverWater2.java
+6. Update Class UpdateAll.java
+	add "river_water1" table to update
+
+7. Right click "persistence.xml", synchronize class list
+
+=============================
 
 
 Inspirer SQLWays Wizard (butterfly)
@@ -73,10 +99,14 @@ call bm_beach.bat all
 
 call bm_beach_ec_agm_rank_report.bat
 call bm_visit_label_summary.bat
+call marine_water1.bat
 call marine_water2.bat
+call marine_water_wqo_raw1.bat
+call river_water1.bat
 call river_water2.bat
+call river_water_wqi1.bat
 call river_water_wqo_sum0.bat
 call rw_wqi_avg.bat
-call annual_wqi.bat
+
 
 

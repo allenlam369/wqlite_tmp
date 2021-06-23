@@ -1,6 +1,6 @@
-DROP TABLE IF EXISTS river_water2 CASCADE;
+DROP TABLE IF EXISTS river_water1 CASCADE;
 
-create table river_water2(
+create table river_water1(
 	zone varchar(30),
 	wcz varchar(10),
 	subzone varchar(100),
@@ -133,10 +133,10 @@ create table river_water2(
 	rainfall varchar(10),
 	tide varchar(10),
 	remark varchar(500),
-	constraint pk_river_water2 primary key (station,mdate)
+	constraint pk_river_water1 primary key (station,mdate)
 );
 
-ALTER TABLE river_water2 add CONSTRAINT fk_river_water2
+ALTER TABLE river_water1 add CONSTRAINT fk_river_water1
 FOREIGN KEY(station)
 REFERENCES rstation(statname)  ON DELETE NO ACTION  ON UPDATE NO ACTION;
 
