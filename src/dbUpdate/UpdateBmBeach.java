@@ -94,6 +94,7 @@ public class UpdateBmBeach implements UpdateDbInterface {
 //	09:48:11.981 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper - ERROR: cannot truncate a table referenced in a foreign key constraint
 //	  Detail: Table "bm_visit_label_summary" references "bm_beach".
 //	  Hint: Truncate table "bm_visit_label_summary" at the same time, or use TRUNCATE ... CASCADE.
+	@SuppressWarnings("unused")
 	private void truncatePostgresTable() {
 		String sql = "TRUNCATE TABLE " + dbName;
 		System.out.println(sql);

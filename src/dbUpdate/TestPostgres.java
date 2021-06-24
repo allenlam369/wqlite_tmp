@@ -29,6 +29,7 @@ public class TestPostgres {
 		try {
 			String sql = "SELECT e.siteId FROM Rstation e WHERE e.siteId = :id";
 
+			@SuppressWarnings("unchecked")
 			List<Rstation> list = em.createQuery(sql).setParameter("id", id).getResultList();
 
 			System.err.println("list size " + list.size());
