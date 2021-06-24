@@ -31,14 +31,7 @@ public class TestPostgres {
 
 			List<Rstation> list = em.createQuery(sql).setParameter("id", id).getResultList();
 
-
-//			javax.persistence.TypedQuery<Rstation> q = em.createNamedQuery("Rstation.findAll", Rstation.class);
-//			List<Rstation> list = q.getResultList();
-
 			System.err.println("list size " + list.size());
-
-//			@SuppressWarnings({ "rawtypes" })
-//			List list = q.getResultList();
 
 			return !list.isEmpty();
 
