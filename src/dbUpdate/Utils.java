@@ -2,7 +2,6 @@ package dbUpdate;
 
 import java.sql.Timestamp;
 import java.util.Calendar;
-import java.util.Date;
 
 public class Utils {
 	public static Timestamp previous2Years(Timestamp ts) {
