@@ -33,8 +33,8 @@ public class UpdateRiverWaterWqi1 implements UpdateDbInterface {
 		truncatePostgresTable();
 
 		String sql = Utils.getAllSql(dbName);
-		int rows = updateAllFromMssql(con, em, sql);
-		System.out.println("rows = " + rows);
+		int count = updateAllFromMssql(con, em, sql);
+		System.err.println("count = " + count);
 
 		em.getTransaction().commit();
 		em.close();

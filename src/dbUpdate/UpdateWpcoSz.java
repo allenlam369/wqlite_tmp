@@ -30,8 +30,9 @@ public class UpdateWpcoSz implements UpdateDbInterface {
 
 		String dbName = "wpco_sz";
 		String sql = Utils.getAllSql(dbName);
-		updateAllFromMssql(con, em, sql);
-
+		int count = updateAllFromMssql(con, em, sql);
+		System.err.println("count = " + count);
+		
 		em.getTransaction().commit();
 		em.close();
 		con.close();

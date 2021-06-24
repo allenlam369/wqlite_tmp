@@ -34,7 +34,6 @@ public class UpdateRiverWaterWqoSum0 implements UpdateDbInterface {
 
 		String sql = Utils.getAllSql(dbName);
 		int count = updateAllFromMssql(con, em, sql);
-
 		System.err.println("count = " + count);
 
 		em.getTransaction().commit();

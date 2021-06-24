@@ -33,8 +33,9 @@ public class UpdateBmVisitLabelSummary implements UpdateDbInterface {
 		truncatePostgresTable();
 
 		String sql = Utils.getAllSql(dbName);
-		incrementalUpdateFromMssql(con, em, sql);
-
+		int count = incrementalUpdateFromMssql(con, em, sql);
+		System.err.println("count = " + count);
+		
 		em.getTransaction().commit();
 		em.close();
 		con.close();
