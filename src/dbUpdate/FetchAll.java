@@ -5,7 +5,7 @@ import java.sql.SQLException;
 
 import javax.persistence.EntityManager;
 
-public class UpdateAll {
+public class FetchAll {
 	static Connection con; // for mssql
 	static private EntityManager em = EntityManagerUtil.getEntityManager(); // for postgres
 
@@ -37,8 +37,9 @@ public class UpdateAll {
 		String dbName17 = "rw_wqi_avg";
 
 		// --------------------------------------------------------------
-		System.out.println("Incremental update data from MSSQL to merge in Postgres");
 		
+		System.out.println("Fetch All data from MSSQL to merge in Postgres");
+
 		int count = 0;
 		UpdateDbInterface u;
 
@@ -76,50 +77,40 @@ public class UpdateAll {
 		System.out.println(dbName8 + " " + count);
 
 		// -------------------------------------------------
-		// incremental update
 		u = new UpdateBmVisitLabelSummary();
-		count = u.incrementalUpdateFromMssql(con, em, Utils.getAllSql(dbName9));
+		count = u.updateAllFromMssql(con, em, Utils.getAllSql(dbName9));
 		System.out.println(dbName9 + " " + count);
 
-		// --------10
 		u = new UpdateMarineWater1();
-		count = u.incrementalUpdateFromMssql(con, em, Utils.getAllSql(dbName10));
+		count = u.updateAllFromMssql(con, em, Utils.getAllSql(dbName10));
 		System.out.println(dbName10 + " " + count);
 
-		// incremental update
 		u = new UpdateMarineWater2();
-		count = u.incrementalUpdateFromMssql(con, em, Utils.getAllSql(dbName11));
+		count = u.updateAllFromMssql(con, em, Utils.getAllSql(dbName11));
 		System.out.println(dbName11 + " " + count);
 
-		// 12
 		u = new UpdateMarineWaterWqoRaw1();
-		count = u.incrementalUpdateFromMssql(con, em, Utils.getAllSql(dbName12));
+		count = u.updateAllFromMssql(con, em, Utils.getAllSql(dbName12));
 		System.out.println(dbName12 + " " + count);
 
-		// new 13
-		// incremental update
 		u = new UpdateRiverWater1();
-		count = u.incrementalUpdateFromMssql(con, em, Utils.getAllSql(dbName13));
+		count = u.updateAllFromMssql(con, em, Utils.getAllSql(dbName13));
 		System.out.println(dbName13 + " " + count);
 
-		// incremental update
 		u = new UpdateRiverWater2();
-		count = u.incrementalUpdateFromMssql(con, em, Utils.getAllSql(dbName14));
+		count = u.updateAllFromMssql(con, em, Utils.getAllSql(dbName14));
 		System.out.println(dbName14 + " " + count);
 
-		// 15
 		u = new UpdateRiverWaterWqi1();
-		count = u.incrementalUpdateFromMssql(con, em, Utils.getAllSql(dbName15));
+		count = u.updateAllFromMssql(con, em, Utils.getAllSql(dbName15));
 		System.out.println(dbName15 + " " + count);
 
-		// incremental update
 		u = new UpdateRiverWaterWqoSum0();
-		count = u.incrementalUpdateFromMssql(con, em, Utils.getAllSql(dbName16));
+		count = u.updateAllFromMssql(con, em, Utils.getAllSql(dbName16));
 		System.out.println(dbName16 + " " + count);
 
-		// incremental update
 		u = new UpdateRwWqiAvg();
-		count = u.incrementalUpdateFromMssql(con, em, Utils.getAllSql(dbName17));
+		count = u.updateAllFromMssql(con, em, Utils.getAllSql(dbName17));
 		System.out.println(dbName17 + " " + count);
 
 		// --------------------------------------------------------------

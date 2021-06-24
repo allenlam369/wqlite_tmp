@@ -13,6 +13,7 @@ public class UpdateBmBeach implements UpdateDbInterface {
 
 	static Connection con; // for mssql
 	static private EntityManager em = EntityManagerUtil.getEntityManager(); // for postgres
+	static String dbName = "bm_beach";
 
 	public static void main(String[] args) throws SQLException {
 		UpdateBmBeach me = new UpdateBmBeach();
@@ -24,10 +25,10 @@ public class UpdateBmBeach implements UpdateDbInterface {
 		if (con == null) {
 			con = ConnectMssql.getConnection();
 		}
+
 		// for postgres
 		em.getTransaction().begin(); // only need to do it once
 
-		String dbName = "bm_beach";
 		String sql = Utils.getAllSql(dbName);
 		updateAllFromMssql(con, em, sql);
 
@@ -80,13 +81,24 @@ public class UpdateBmBeach implements UpdateDbInterface {
 					}
 				} // while
 
-//				em.getTransaction().commit();
 				return i;
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return 0;
+	}
+
+	// truncate table in postgres
+//	09:48:11.981 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper - ERROR: cannot truncate a table referenced in a foreign key constraint
+//	  Detail: Table "bm_visit_label_summary" references "bm_beach".
+//	  Hint: Truncate table "bm_visit_label_summary" at the same time, or use TRUNCATE ... CASCADE.
+	private void truncatePostgresTable() {
+		String sql = "TRUNCATE TABLE " + dbName;
+		System.out.println(sql);
+		em.createNativeQuery(sql).executeUpdate();
+
+//		em.createQuery("DELETE FROM " + myClass.getName() + " e").executeUpdate();
 	}
 
 }

@@ -14,6 +14,7 @@ import model.RiverWaterWqoSum0PK;
 public class UpdateRiverWaterWqoSum0 implements UpdateDbInterface {
 	static Connection con; // for mssql
 	static private EntityManager em = EntityManagerUtil.getEntityManager(); // for postgres
+	static String dbName = "river_water_wqo_sum0";
 
 	public static void main(String[] args) throws SQLException {
 		UpdateRiverWaterWqoSum0 me = new UpdateRiverWaterWqoSum0();
@@ -28,7 +29,9 @@ public class UpdateRiverWaterWqoSum0 implements UpdateDbInterface {
 		// for postgres
 		em.getTransaction().begin(); // only need to do it once
 
-		String dbName = "river_water_wqo_sum0";
+		// delete all rows in postgres table
+		truncatePostgresTable();
+
 		String sql = Utils.getAllSql(dbName);
 		int count = updateAllFromMssql(con, em, sql);
 
@@ -129,5 +132,14 @@ public class UpdateRiverWaterWqoSum0 implements UpdateDbInterface {
 			e.printStackTrace();
 		}
 		return 0;
+	}
+
+	// Works only if this table is not referenced by other tables
+//	  Detail: Table "bm_visit_label_summary" references "bm_beach".
+//	  Hint: Truncate table "bm_visit_label_summary" at the same time, or use TRUNCATE ... CASCADE.
+	private void truncatePostgresTable() {
+		String sql = "TRUNCATE TABLE " + dbName;
+		System.out.println(sql);
+		em.createNativeQuery(sql).executeUpdate();
 	}
 }

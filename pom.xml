@@ -57,7 +57,7 @@
 							<arguments>
 								<argument>-classpath</argument>
 								<classpath />
-								<argument>dbUpdate.TestPostgres</argument>
+								<argument>dbUpdate.FetchAll</argument>
 							</arguments>
 						</configuration>
 					</execution>

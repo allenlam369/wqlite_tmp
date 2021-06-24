@@ -88,3 +88,7 @@ create table marine_water1
       constraint pk_marine_water1 primary key (station,mdate,d_code)
    );
 
+ALTER TABLE marine_water1 add CONSTRAINT fk_marine_water1
+FOREIGN KEY(station)
+REFERENCES mstation(mw_name)  ON DELETE NO ACTION  ON UPDATE NO ACTION;
+

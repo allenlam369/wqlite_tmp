@@ -19,6 +19,7 @@ public class UpdateBeachRankReport implements UpdateDbInterface {
 
 	static Connection con; // for mssql
 	static private EntityManager em = EntityManagerUtil.getEntityManager(); // for postgres
+	static String dbName = "BmBeachEcAgmRankReport";
 
 	public static void main(String[] args) throws SQLException {
 		UpdateBeachRankReport me = new UpdateBeachRankReport();
@@ -32,8 +33,10 @@ public class UpdateBeachRankReport implements UpdateDbInterface {
 		}
 		// for postgres
 		em.getTransaction().begin(); // only need to do it once
-
-		String dbName = "BmBeachEcAgmRankReport";
+		
+		// delete all rows in postgres table
+		truncatePostgresTable();
+		
 		String sql = Utils.getAllSql(dbName);
 		// lastUpdateDate found in postgres table
 		Timestamp ts = getLastUpdateDateFromPostgres(sql);
@@ -206,4 +209,12 @@ public class UpdateBeachRankReport implements UpdateDbInterface {
 		}
 	}
 
+	// Works only if this table is not referenced by other tables
+//	  Detail: Table "bm_visit_label_summary" references "bm_beach".
+//	  Hint: Truncate table "bm_visit_label_summary" at the same time, or use TRUNCATE ... CASCADE.
+	private void truncatePostgresTable() {
+		String sql = "TRUNCATE TABLE " + dbName;
+		System.out.println(sql);
+		em.createNativeQuery(sql).executeUpdate();
+	}
 }

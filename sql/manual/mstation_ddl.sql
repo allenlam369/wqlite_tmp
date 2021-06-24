@@ -45,11 +45,15 @@ create table mstation
 alter table mstation add constraint pk_mstation
 primary key(site_id);
 
-alter table mstation add constraint unique_mw_name
-unique(mw_name);
+-- alter table mstation add constraint unique_mw_name
+-- unique(mw_name);
 
 
 alter table mstation add constraint fk_mstation_wpco_sz
 foreign key(sz_id)
 references wpco_sz(sz_id)   on delete no action  on update no action;
+
+CREATE UNIQUE INDEX unique_mw_name
+ON mstation(mw_name);
+
 
