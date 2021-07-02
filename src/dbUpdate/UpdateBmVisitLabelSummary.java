@@ -47,7 +47,9 @@ public class UpdateBmVisitLabelSummary implements UpdateDbInterface {
 			Timestamp ts2 = null;
 			if (con != null) {
 				Statement stmt = con.createStatement();
+				// find the latest date in this table of mssql
 				String sql1 = "SELECT top 1 mdate FROM WPG.bm_visit_label_summary order by mdate DESC";
+				
 				ResultSet rs = stmt.executeQuery(sql1);
 
 				// Iterate through the data in the result set and display it.
@@ -56,6 +58,7 @@ public class UpdateBmVisitLabelSummary implements UpdateDbInterface {
 					ts2 = Utils.previous2Years(ts);
 				}
 
+				// query for rows 2 years older the latest date
 				sql += " where mdate >= '" + ts2 + "'";
 				System.err.println(sql);
 
@@ -67,7 +70,6 @@ public class UpdateBmVisitLabelSummary implements UpdateDbInterface {
 		return count;
 	}
 
-	@Override
 	public int updateAllFromMssql(Connection con, EntityManager em, String sql) {
 		try {
 			if (con != null) {
