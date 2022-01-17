@@ -1,0 +1,79 @@
+-- public.tide definition
+
+-- Drop table
+
+-- DROP TABLE tide;
+
+CREATE TABLE tide (
+	id serial NOT NULL,
+	station_id int4 NULL,
+	datetime timestamptz NULL,
+	height numeric(6, 2) NULL
+);
+CREATE INDEX tide_datetime_idx ON public.tide USING btree (datetime);
+CREATE INDEX tide_station_idx ON public.tide USING btree (station_id);
+
+
+
+
+-- public.tide_station definition
+
+-- Drop table
+
+-- DROP TABLE tide_station;
+
+CREATE TABLE tide_station (
+	id int4 NOT NULL,
+	"name" varchar(20) NULL,
+	CONSTRAINT station_pk PRIMARY KEY (id)
+);
+
+
+insert into public.station (id,name) values (1,'Quarry Bay');
+insert into public.station (id,name) values (2,'Shek Pik');
+insert into public.station (id,name) values (3,'Tsim Bei Tsui');
+insert into public.station (id,name) values (4,'Tai Miu Wan');
+insert into public.station (id,name) values (5,'Tai Po Kau');
+insert into public.station (id,name) values (6,'Tai O');
+insert into public.station (id,name) values (7,'Kwai Chung');
+insert into public.station (id,name) values (8,'Ma Wan');
+insert into public.station (id,name) values (9,'Cheung Chau');
+insert into public.station (id,name) values (10,'Ko Lau Wan');
+insert into public.station (id,name) values (11,'Sha Kiu Tau');
+
+
+
+
+
+
+-- public.uvi definition
+
+-- Drop table
+
+-- DROP TABLE uvi;
+
+CREATE TABLE uvi (
+	id serial NOT NULL,
+	datetime timestamptz NULL,
+	uvi numeric NULL,
+	CONSTRAINT uvi_pk PRIMARY KEY (id)
+);
+CREATE UNIQUE INDEX uvi_dt_idx ON public.uvi USING btree (datetime DESC);
+
+
+
+
+-- public.tide_level_datagovhk source
+
+CREATE OR REPLACE VIEW public.tide_level_datagovhk
+AS SELECT s.id AS station_id,
+    s.name AS station_name,
+    t.datetime,
+    t.height
+   FROM tide t,
+    tide_station s
+  WHERE t.station_id = s.id;
+  
+  
+  
+  

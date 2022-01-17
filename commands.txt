@@ -1,0 +1,40 @@
+commands:
+
+mvn exec:exec@id1
+  dbUpdate.UpdateAll
+  - Incremental update data from MSSQL to merge in Postgres
+  - all (17) db tables under wqplis_lite will be updated
+
+mvn exec:exec@id2
+  dbUpdate.FetchAll
+  - Fetch All data from MSSQL to merge in Postgres
+  - all (17) db tables under wqplis_lite will be updated
+  
+mvn exec:exec@id3
+  common.ConnectMssql
+  - for testing connection to mssql db
+
+mvn exec:exec@id4
+  tidal.Download
+  - a cron job
+  - download current tide csv data
+  - update db
+
+mvn exec:exec@id5
+  uvi.Download
+  - a cron job
+  - download current uvi csv data
+  - update db
+
+mvn exec:exec@id6
+  tidal.BatchDownload
+  - base on file list in db.properties
+  - download tidal csv files in batch
+  - update db
+
+
+
+
+
+
+
