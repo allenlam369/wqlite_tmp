@@ -8,6 +8,9 @@ import java.sql.Timestamp;
 
 import javax.persistence.EntityManager;
 
+import common.ConnectMssql;
+import common.EntityManagerUtil;
+import common.Utils;
 import model.RiverWaterWqi1;
 import model.RiverWaterWqi1PK;
 
@@ -53,11 +56,12 @@ public class UpdateRiverWaterWqi1 implements UpdateDbInterface {
 				// Iterate through the data in the result set and display it.
 				if (rs.next()) {
 					Timestamp ts = rs.getTimestamp("mdate");
-					ts2 = Utils.previous2Years(ts);
+					ts2 = Utils.lastMonth(ts);
 				}
 
 				sql += " where mdate >= '" + ts2 + "'";
 				System.err.println(sql);
+				UpdateAll.sList.add(sql);
 
 				count = updateAllFromMssql(con, em, sql);
 			}

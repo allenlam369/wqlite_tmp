@@ -7,6 +7,9 @@ import java.sql.Statement;
 
 import javax.persistence.EntityManager;
 
+import common.ConnectMssql;
+import common.EntityManagerUtil;
+import common.Utils;
 import model.RiverWaterWqoSum0;
 import model.RiverWaterWqoSum0PK;
 
@@ -46,6 +49,8 @@ public class UpdateRiverWaterWqoSum0 implements UpdateDbInterface {
 			int yr = Utils.getCurrentYear();
 			sql += " where yr >= " + (yr - 2);
 			System.err.println(sql);
+			UpdateAll.sList.add(sql);
+
 			count = updateAllFromMssql(con, em, sql);
 		}
 		return count;

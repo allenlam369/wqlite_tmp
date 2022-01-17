@@ -46,7 +46,7 @@ rem --------------------------------------------------------------
 :create_table
 echo Creating table and its constraints using the PostgreSQL command line utility
 
-"C:\\Program Files\\PostgreSQL\\13\\bin\psql.exe" -h localhost -U postgres -p 5432 -d wqplis_lite --file mstation_ddl.sql >> mstation.log
+"C:\\Program Files\\PostgreSQL\\13\\bin\psql.exe" -h localhost -U postgres -p 5432 -d wqplis_tmp --file mstation_ddl.sql >> mstation.log
 
 set /A exit_code+=%errorlevel%
 
@@ -59,7 +59,7 @@ rem --------------------------------------------------------------
 :import_data
 echo Importing data using the PostgreSQL COPY command
 
-"C:\\Program Files\\PostgreSQL\\13\\bin\psql.exe" -h localhost -U postgres -p 5432 -d wqplis_lite --file mstation.ldi
+"C:\\Program Files\\PostgreSQL\\13\\bin\psql.exe" -h localhost -U postgres -p 5432 -d wqplis_tmp --file mstation.ldi
 
 set /A exit_code+=%errorlevel%
 

@@ -7,6 +7,9 @@ import java.sql.Statement;
 
 import javax.persistence.EntityManager;
 
+import common.ConnectMssql;
+import common.EntityManagerUtil;
+import common.Utils;
 import model.TenZone;
 
 public class UpdateTenZone implements UpdateDbInterface {

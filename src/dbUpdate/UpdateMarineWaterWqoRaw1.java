@@ -9,6 +9,9 @@ import java.sql.Timestamp;
 
 import javax.persistence.EntityManager;
 
+import common.ConnectMssql;
+import common.EntityManagerUtil;
+import common.Utils;
 import model.MarineWaterWqoRaw1;
 import model.MarineWaterWqoRaw1PK;
 
@@ -34,7 +37,7 @@ public class UpdateMarineWaterWqoRaw1 implements UpdateDbInterface {
 		truncatePostgresTable();
 
 		String sql = Utils.getAllSql(dbName);
-		int count = incrementalUpdateFromMssql(con, em, sql);
+		int count = updateAllFromMssql(con, em, sql);
 		System.err.println("count = " + count);
 
 		em.getTransaction().commit();
@@ -54,11 +57,12 @@ public class UpdateMarineWaterWqoRaw1 implements UpdateDbInterface {
 				// Iterate through the data in the result set and display it.
 				if (rs.next()) {
 					Timestamp ts = rs.getTimestamp("mdate");
-					ts2 = Utils.previous2Years(ts);
+					ts2 = Utils.lastMonth(ts);
 				}
 
 				sql += " where mdate >= '" + ts2 + "'";
 				System.err.println(sql);
+				UpdateAll.sList.add(sql);
 
 				count = updateAllFromMssql(con, em, sql);
 			}
