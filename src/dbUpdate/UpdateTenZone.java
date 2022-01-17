@@ -31,6 +31,9 @@ public class UpdateTenZone implements UpdateDbInterface {
 		// for postgres
 		em.getTransaction().begin(); // only need to do it once
 
+		// delete all rows in postgres table
+		truncatePostgresTable();
+
 		String sql = Utils.getAllSql(dbName);
 		int count = updateAllFromMssql(con, em, sql);
 		System.err.println("count = " + count);
@@ -81,4 +84,9 @@ public class UpdateTenZone implements UpdateDbInterface {
 		return 0;
 	}
 
+	private void truncatePostgresTable() {
+		String sql = "TRUNCATE TABLE " + dbName;
+		System.out.println(sql);
+		em.createNativeQuery(sql).executeUpdate();
+	}
 }

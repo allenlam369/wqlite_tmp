@@ -16,6 +16,7 @@ public class UpdateRiver implements UpdateDbInterface {
 
 	static Connection con; // for mssql
 	static private EntityManager em = EntityManagerUtil.getEntityManager(); // for postgres
+	static String dbName = "river";
 
 	public static void main(String[] args) throws SQLException {
 		UpdateRiver me = new UpdateRiver();
@@ -30,11 +31,13 @@ public class UpdateRiver implements UpdateDbInterface {
 		// for postgres
 		em.getTransaction().begin(); // only need to do it once
 
-		String dbName = "river";
+		// delete all rows in postgres table
+		truncatePostgresTable();
+
 		String sql = Utils.getAllSql(dbName);
 		int count = updateAllFromMssql(con, em, sql);
 		System.err.println("count = " + count);
-		
+
 		em.getTransaction().commit();
 		em.close();
 		con.close();
@@ -90,4 +93,9 @@ public class UpdateRiver implements UpdateDbInterface {
 		return 0;
 	}
 
+	private void truncatePostgresTable() {
+		String sql = "TRUNCATE TABLE " + dbName;
+		System.out.println(sql);
+		em.createNativeQuery(sql).executeUpdate();
+	}
 }

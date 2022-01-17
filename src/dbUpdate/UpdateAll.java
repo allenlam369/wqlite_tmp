@@ -49,6 +49,9 @@ public class UpdateAll {
 		String dbName17 = "rw_wqi_avg";
 
 		// --------------------------------------------------------------
+		// truncate tables first
+
+		// --------------------------------------------------------------
 		System.out.println("Incremental update data from MSSQL to merge in Postgres");
 
 		sList.add(Utils.getAllSql(dbName1));
@@ -175,10 +178,16 @@ public class UpdateAll {
 		con.close();
 
 		System.out.println("DONE");
-		
+
 		for (String s : sList) {
 			System.out.println(s);
 		}
 	}
+
+//	public int hqlTruncate(String myTable){
+//	    String hql = String.format("delete from %s",myTable);
+//	    Query query = session.createQuery(hql);
+//	    return query.executeUpdate();
+//	}
 
 }

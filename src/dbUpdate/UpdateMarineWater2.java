@@ -5,6 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Timestamp;
+import java.util.Calendar;
 
 import javax.persistence.EntityManager;
 
@@ -32,8 +33,12 @@ public class UpdateMarineWater2 implements UpdateDbInterface {
 		// for postgres
 		em.getTransaction().begin(); // only need to do it once
 
+		// delete all rows in postgres table
+		truncatePostgresTable();
+		
 		String sql = Utils.getAllSql(dbName);
-		int count = updateAllFromMssql(con, em, sql);
+//		int count = updateAllFromMssql(con, em, sql);
+		int count = incrementalUpdateFromMssql(con, em, sql);
 		System.err.println("count = " + count);
 
 		em.getTransaction().commit();
@@ -42,29 +47,11 @@ public class UpdateMarineWater2 implements UpdateDbInterface {
 	}
 
 	public int incrementalUpdateFromMssql(Connection con, EntityManager em, String sql) {
-		int count = 0;
-		try {
-			Timestamp ts2 = null;
-			if (con != null) {
-				Statement stmt = con.createStatement();
-				String sql1 = "SELECT top 1 mdate FROM [WPG].[MARINE_WATER2] order by mdate DESC";
-				ResultSet rs = stmt.executeQuery(sql1);
-
-				// Iterate through the data in the result set and display it.
-				if (rs.next()) {
-					Timestamp ts = rs.getTimestamp("mdate");
-					ts2 = Utils.lastMonth(ts);
-				}
-
-				sql += " where mdate >= '" + ts2 + "'";
-				System.err.println(sql);
-				UpdateAll.sList.add(sql);
-
-				count = updateAllFromMssql(con, em, sql);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+		Timestamp ts2 = Utils.lastMonth();
+		sql += " where mdate >= '" + ts2 + "'";
+		System.err.println(sql);
+		UpdateAll.sList.add(sql);
+		int count = updateAllFromMssql(con, em, sql);
 		return count;
 	}
 

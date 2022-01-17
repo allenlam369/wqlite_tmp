@@ -15,6 +15,7 @@ import model.Rstation;
 public class UpdateRstation implements UpdateDbInterface {
 	static Connection con; // for mssql
 	static private EntityManager em = EntityManagerUtil.getEntityManager(); // for postgres
+	static String dbName = "rstation";
 
 	public static void main(String[] args) throws SQLException {
 		UpdateRstation me = new UpdateRstation();
@@ -29,7 +30,9 @@ public class UpdateRstation implements UpdateDbInterface {
 		// for postgres
 		em.getTransaction().begin(); // only need to do it once
 
-		String dbName = "rstation";
+		// delete all rows in postgres table
+		truncatePostgresTable();
+		
 		String sql = Utils.getAllSql(dbName);
 		int count = updateAllFromMssql(con, em, sql);
 		System.err.println("count = " + count);
@@ -98,4 +101,11 @@ public class UpdateRstation implements UpdateDbInterface {
 		}
 		return 0;
 	}
+	
+	private void truncatePostgresTable() {
+		String sql = "TRUNCATE TABLE " + dbName;
+		System.out.println(sql);
+		em.createNativeQuery(sql).executeUpdate();
+	}
+	
 }

@@ -36,44 +36,53 @@ public class UpdateBmVisitLabelSummary implements UpdateDbInterface {
 		truncatePostgresTable();
 
 		String sql = Utils.getAllSql(dbName);
-		int count = updateAllFromMssql(con, em, sql);
+		int count = incrementalUpdateFromMssql(con, em, sql);
 		System.err.println("count = " + count);
-		
+
 		em.getTransaction().commit();
 		em.close();
 		con.close();
 	}
 
 	public int incrementalUpdateFromMssql(Connection con, EntityManager em, String sql) {
-		int count = 0;
-		try {
-			Timestamp ts2 = null;
-			if (con != null) {
-				Statement stmt = con.createStatement();
-				// find the latest date in this table of mssql
-				String sql1 = "SELECT top 1 mdate FROM WPG.bm_visit_label_summary order by mdate DESC";
-				
-				ResultSet rs = stmt.executeQuery(sql1);
-
-				// Iterate through the data in the result set and display it.
-				if (rs.next()) {
-					Timestamp ts = rs.getTimestamp("mdate");
-					ts2 = Utils.lastMonth(ts);
-				}
-
-				// query for rows 2 years older the latest date
-				sql += " where mdate >= '" + ts2 + "'";
-				System.err.println(sql);
-				
-				UpdateAll.sList.add(sql);
-
-				count = updateAllFromMssql(con, em, sql);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+		Timestamp ts2 = Utils.lastMonth();
+		sql += " where mdate >= '" + ts2 + "'";
+		System.err.println(sql);
+		UpdateAll.sList.add(sql);
+		int count = updateAllFromMssql(con, em, sql);
 		return count;
 	}
+	
+//	public int incrementalUpdateFromMssql(Connection con, EntityManager em, String sql) {
+//		int count = 0;
+//		try {
+//			Timestamp ts2 = null;
+//			if (con != null) {
+//				Statement stmt = con.createStatement();
+//				// find the latest date in this table of mssql
+//				String sql1 = "SELECT top 1 mdate FROM WPG.bm_visit_label_summary order by mdate DESC";
+//				
+//				ResultSet rs = stmt.executeQuery(sql1);
+//
+//				// Iterate through the data in the result set and display it.
+//				if (rs.next()) {
+//					Timestamp ts = rs.getTimestamp("mdate");
+//					ts2 = Utils.lastMonth(ts);
+//				}
+//
+//				// query for rows 2 years older the latest date
+//				sql += " where mdate >= '" + ts2 + "'";
+//				System.err.println(sql);
+//				
+//				UpdateAll.sList.add(sql);
+//
+//				count = updateAllFromMssql(con, em, sql);
+//			}
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		}
+//		return count;
+//	}
 
 	public int updateAllFromMssql(Connection con, EntityManager em, String sql) {
 		try {
