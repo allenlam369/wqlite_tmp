@@ -34,9 +34,8 @@ public class UpdateMarineWater1 implements UpdateDbInterface {
 
 		// delete all rows in postgres table
 		truncatePostgresTable();
-		
+
 		String sql = Utils.getAllSql(dbName);
-//		int count = updateAllFromMssql(con, em, sql);
 		int count = incrementalUpdateFromMssql(con, em, sql);
 		System.err.println("count = " + count);
 
@@ -45,34 +44,6 @@ public class UpdateMarineWater1 implements UpdateDbInterface {
 		con.close();
 	}
 
-//	public int incrementalUpdateFromMssql(Connection con, EntityManager em, String sql) {
-//		int count = 0;
-//		try {
-//			Timestamp ts2 = null;
-//			if (con != null) {
-//				Statement stmt = con.createStatement();
-//				String sql1 = "SELECT top 1 mdate FROM [WPG].[MARINE_WATER1] order by mdate DESC";
-//				ResultSet rs = stmt.executeQuery(sql1);
-//
-//				// Iterate through the data in the result set and display it.
-//				if (rs.next()) {
-//					Timestamp ts = rs.getTimestamp("mdate");
-//					ts2 = Utils.lastMonth(ts);
-//				}
-//
-//				sql += " where mdate >= '" + ts2 + "'";
-//				System.err.println(sql);
-//				UpdateAll.sList.add(sql);
-//
-//				count = updateAllFromMssql(con, em, sql);
-//			}
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//		}
-//		return count;
-//	}
-	
-	
 	public int incrementalUpdateFromMssql(Connection con, EntityManager em, String sql) {
 		Timestamp ts2 = Utils.lastMonth();
 		sql += " where mdate >= '" + ts2 + "'";
@@ -205,8 +176,7 @@ public class UpdateMarineWater1 implements UpdateDbInterface {
 	// Works only if this table is not referenced by other tables
 //	  Detail: Table "bm_visit_label_summary" references "bm_beach".
 //	  Hint: Truncate table "bm_visit_label_summary" at the same time, or use TRUNCATE ... CASCADE.
-	@SuppressWarnings("unused")
-	private void truncatePostgresTable() {
+	public void truncatePostgresTable() {
 		String sql = "TRUNCATE TABLE " + dbName;
 		System.out.println(sql);
 		em.createNativeQuery(sql).executeUpdate();

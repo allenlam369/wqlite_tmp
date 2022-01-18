@@ -48,6 +48,7 @@ public class UpdateTenZone implements UpdateDbInterface {
 	}
 
 	public int updateAllFromMssql(Connection con, EntityManager em, String sql) {
+		UpdateAll.sList.add(sql);
 		try {
 			if (con != null) {
 
@@ -84,7 +85,7 @@ public class UpdateTenZone implements UpdateDbInterface {
 		return 0;
 	}
 
-	private void truncatePostgresTable() {
+	public void truncatePostgresTable() {
 		String sql = "TRUNCATE TABLE " + dbName;
 		System.out.println(sql);
 		em.createNativeQuery(sql).executeUpdate();

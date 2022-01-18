@@ -100,7 +100,7 @@ public class UpdateRwWqiAvg implements UpdateDbInterface {
 	// Works only if this table is not referenced by other tables
 //	  Detail: Table "bm_visit_label_summary" references "bm_beach".
 //	  Hint: Truncate table "bm_visit_label_summary" at the same time, or use TRUNCATE ... CASCADE.
-	private void truncatePostgresTable() {
+	public void truncatePostgresTable() {
 		String sql = "TRUNCATE TABLE " + dbName;
 		System.out.println(sql);
 		em.createNativeQuery(sql).executeUpdate();

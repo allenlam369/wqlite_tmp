@@ -49,6 +49,7 @@ public class UpdateWpcoSz implements UpdateDbInterface {
 	}
 
 	public int updateAllFromMssql(Connection con, EntityManager em, String sql) {
+		UpdateAll.sList.add(sql);
 		try {
 			if (con != null) {
 
@@ -74,9 +75,6 @@ public class UpdateWpcoSz implements UpdateDbInterface {
 					row.setValidUser(rs.getString("valid_user"));
 					row.setValidDate(rs.getTimestamp("valid_date"));
 					row.setValidCode(rs.getBigDecimal("valid_code"));
-
-//					System.err.println(row.getWpcoWcz().getWczId());
-
 					em.merge(row);
 
 					if (i % 1000 == 0) {
@@ -85,9 +83,6 @@ public class UpdateWpcoSz implements UpdateDbInterface {
 					}
 				} // while
 
-//				em.getTransaction().commit();
-
-//				System.err.println("row count: " + i);
 				return i;
 			}
 		} catch (SQLException e) {
@@ -96,7 +91,7 @@ public class UpdateWpcoSz implements UpdateDbInterface {
 		return 0;
 	}
 
-	private void truncatePostgresTable() {
+	public void truncatePostgresTable() {
 		String sql = "TRUNCATE TABLE " + dbName;
 		System.out.println(sql);
 		em.createNativeQuery(sql).executeUpdate();

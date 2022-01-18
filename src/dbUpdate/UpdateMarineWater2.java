@@ -5,7 +5,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Timestamp;
-import java.util.Calendar;
 
 import javax.persistence.EntityManager;
 
@@ -35,9 +34,8 @@ public class UpdateMarineWater2 implements UpdateDbInterface {
 
 		// delete all rows in postgres table
 		truncatePostgresTable();
-		
+
 		String sql = Utils.getAllSql(dbName);
-//		int count = updateAllFromMssql(con, em, sql);
 		int count = incrementalUpdateFromMssql(con, em, sql);
 		System.err.println("count = " + count);
 
@@ -163,8 +161,7 @@ public class UpdateMarineWater2 implements UpdateDbInterface {
 	// Works only if this table is not referenced by other tables
 //	  Detail: Table "bm_visit_label_summary" references "bm_beach".
 //	  Hint: Truncate table "bm_visit_label_summary" at the same time, or use TRUNCATE ... CASCADE.
-	@SuppressWarnings("unused")
-	private void truncatePostgresTable() {
+	public void truncatePostgresTable() {
 		String sql = "TRUNCATE TABLE " + dbName;
 		System.out.println(sql);
 		em.createNativeQuery(sql).executeUpdate();

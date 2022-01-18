@@ -47,6 +47,7 @@ public class UpdateRstation implements UpdateDbInterface {
 	}
 
 	public int updateAllFromMssql(Connection con, EntityManager em, String sql) {
+		UpdateAll.sList.add(sql);
 		try {
 			if (con != null) {
 
@@ -81,8 +82,6 @@ public class UpdateRstation implements UpdateDbInterface {
 					row.setNorthing1(rs.getBigDecimal("northing1"));
 					row.setEndDate(rs.getTimestamp("end_date"));
 					row.setActiveYear(rs.getBigDecimal("active_year"));
-
-//					System.err.println(row.getSiteId());
 					em.merge(row);
 
 					if (i % 1000 == 0) {
@@ -90,10 +89,6 @@ public class UpdateRstation implements UpdateDbInterface {
 						em.clear();
 					}
 				} // while
-
-//				em.getTransaction().commit();
-
-//				System.err.println("row count: " + i);
 				return i;
 			}
 		} catch (SQLException e) {
@@ -102,7 +97,7 @@ public class UpdateRstation implements UpdateDbInterface {
 		return 0;
 	}
 	
-	private void truncatePostgresTable() {
+	public void truncatePostgresTable() {
 		String sql = "TRUNCATE TABLE " + dbName;
 		System.out.println(sql);
 		em.createNativeQuery(sql).executeUpdate();

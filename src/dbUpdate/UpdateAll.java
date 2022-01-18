@@ -3,7 +3,9 @@ package dbUpdate;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.persistence.EntityManager;
 
@@ -14,10 +16,24 @@ import common.ConnectMssql;
 import common.EntityManagerUtil;
 import common.Utils;
 
+/**
+ * Truncate all these tables under obelix:5433.wqplis_lite.tmp_lite. Rebuild
+ * table data of recent months by reading from MSSQL WPG.wqplis
+ * 
+ * Used for comparing tables in obelix:5433.wqplis_lite.public, to detect any
+ * extra un-needed rows existing in pg tables.
+ * 
+ * The following steps will be handled by another program or script:
+ * 
+ * The extra un-needed rows will be copied to obelix:5433.wqplis_lite.del_bak,
+ * and then deleted in obelix:5433.wqplis_lite.public
+ * 
+ * @author Allen Lam
+ *
+ */
 public class UpdateAll {
 	static Connection con; // for mssql
 	static private EntityManager em = EntityManagerUtil.getEntityManager(); // for postgres
-//	static Logger log = Logger.getLogger(UpdateAll.class.getName());
 	static Logger log = LoggerFactory.getLogger(UpdateAll.class);
 	static List<String> sList = new ArrayList<>();
 
@@ -39,138 +55,61 @@ public class UpdateAll {
 
 		String dbName8 = "bm_beach_ec_agm_rank_report";
 		String dbName9 = "bm_visit_label_summary";
-		String dbName10 = "marine_water1"; // new
+		String dbName10 = "marine_water1";
 		String dbName11 = "marine_water2";
-		String dbName12 = "marine_water_wqo_raw1"; // new
-		String dbName13 = "river_water1"; // new
+		String dbName12 = "marine_water_wqo_raw1";
+		String dbName13 = "river_water1";
 		String dbName14 = "river_water2";
-		String dbName15 = "river_water_wqi1"; // new
+		String dbName15 = "river_water_wqi1";
+
 		String dbName16 = "river_water_wqo_sum0";
 		String dbName17 = "rw_wqi_avg";
 
 		// --------------------------------------------------------------
 		// truncate tables first
-
 		// --------------------------------------------------------------
 		System.out.println("Incremental update data from MSSQL to merge in Postgres");
 
-		sList.add(Utils.getAllSql(dbName1));
-		sList.add(Utils.getAllSql(dbName2));
-		sList.add(Utils.getAllSql(dbName3));
-		sList.add(Utils.getAllSql(dbName4));
-		sList.add(Utils.getAllSql(dbName5));
-		sList.add(Utils.getAllSql(dbName6));
-		sList.add(Utils.getAllSql(dbName7));
-		sList.add(Utils.getAllSql(dbName8));
-
 		int count = 0;
-		UpdateDbInterface u;
 
-		u = new UpdateTenZone();
+		// for running updateAllFromMssql()
+		Map<UpdateDbInterface, String> map1 = new LinkedHashMap<>();
+		map1.put(new UpdateTenZone(), Utils.getAllSql(dbName1));
+		map1.put(new UpdateWpcoWcz(), Utils.getAllSql(dbName2));
+		map1.put(new UpdateWpcoSz(), Utils.getAllSql(dbName3));
+		map1.put(new UpdateRiver(), Utils.getAllSql(dbName4));
+		map1.put(new UpdateRstation(), Utils.getAllSql(dbName5));
+		map1.put(new UpdateMstation(), Utils.getAllSql(dbName6));
+		map1.put(new UpdateBmBeach(), Utils.getAllSql(dbName7));
+		map1.put(new UpdateBeachRankReport(), Utils.getAllSql(dbName8));
 
-		count = u.updateAllFromMssql(con, em, Utils.getAllSql(dbName1));
-		System.out.println(dbName1 + " " + count);
-		log.info(dbName1 + " " + count);
-
-		u = new UpdateWpcoWcz();
-		count = u.updateAllFromMssql(con, em, Utils.getAllSql(dbName2));
-		System.out.println(dbName2 + " " + count);
-		log.info(dbName2 + " " + count);
-
-		u = new UpdateWpcoSz();
-		count = u.updateAllFromMssql(con, em, Utils.getAllSql(dbName3));
-		System.out.println(dbName3 + " " + count);
-		log.info(dbName3 + " " + count);
-
-		u = new UpdateRiver();
-		count = u.updateAllFromMssql(con, em, Utils.getAllSql(dbName4));
-		System.out.println(dbName4 + " " + count);
-		log.info(dbName4 + " " + count);
-
-		u = new UpdateRstation();
-		count = u.updateAllFromMssql(con, em, Utils.getAllSql(dbName5));
-		System.out.println(dbName5 + " " + count);
-		log.info(dbName5 + " " + count);
-
-		u = new UpdateMstation();
-		count = u.updateAllFromMssql(con, em, Utils.getAllSql(dbName6));
-		System.out.println(dbName6 + " " + count);
-		log.info(dbName6 + " " + count);
-
-		u = new UpdateBmBeach();
-		count = u.updateAllFromMssql(con, em, Utils.getAllSql(dbName7));
-		System.out.println(dbName7 + " " + count);
-		log.info(dbName7 + " " + count);
-
-		u = new UpdateBeachRankReport();
-		count = u.updateAllFromMssql(con, em, Utils.getAllSql(dbName8));
-		System.out.println(dbName8 + " " + count);
-		log.info(dbName8 + " " + count);
-
-		// -------------------------------------------------
-		// incremental update
+		// for running incrementalUpdateFromMssql()
 		// sql += " where mdate >= '" + lastMonth + "'";
-		u = new UpdateBmVisitLabelSummary();
-		count = u.incrementalUpdateFromMssql(con, em, Utils.getAllSql(dbName9));
-		System.out.println(dbName9 + " " + count);
-		log.info(dbName9 + " " + count);
-
-		// --------10
-		// sql += " where mdate >= '" + lastMonth + "'";
-		u = new UpdateMarineWater1();
-		count = u.incrementalUpdateFromMssql(con, em, Utils.getAllSql(dbName10));
-		System.out.println(dbName10 + " " + count);
-		log.info(dbName10 + " " + count);
-
-		// incremental update
-		// sql += " where mdate >= '" + lastMonth + "'";
-		u = new UpdateMarineWater2();
-		count = u.incrementalUpdateFromMssql(con, em, Utils.getAllSql(dbName11));
-		System.out.println(dbName11 + " " + count);
-		log.info(dbName11 + " " + count);
-
-		// 12
-		// sql += " where mdate >= '" + lastMonth + "'";
-		u = new UpdateMarineWaterWqoRaw1();
-		count = u.incrementalUpdateFromMssql(con, em, Utils.getAllSql(dbName12));
-		System.out.println(dbName12 + " " + count);
-		log.info(dbName12 + " " + count);
-
-		// new 13
-		// incremental update
-		// sql += " where mdate >= '" + lastMonth + "'";
-		u = new UpdateRiverWater1();
-		count = u.incrementalUpdateFromMssql(con, em, Utils.getAllSql(dbName13));
-		System.out.println(dbName13 + " " + count);
-		log.info(dbName13 + " " + count);
-
-		// incremental update
-		// sql += " where mdate >= '" + lastMonth + "'";
-		u = new UpdateRiverWater2();
-		count = u.incrementalUpdateFromMssql(con, em, Utils.getAllSql(dbName14));
-		System.out.println(dbName14 + " " + count);
-		log.info(dbName14 + " " + count);
-
-		// 15
-		// sql += " where mdate >= '" + lastMonth + "'";
-		u = new UpdateRiverWaterWqi1();
-		count = u.incrementalUpdateFromMssql(con, em, Utils.getAllSql(dbName15));
-		System.out.println(dbName15 + " " + count);
-		log.info(dbName15 + " " + count);
-
-		// incremental update
+		Map<UpdateDbInterface, String> map2 = new LinkedHashMap<>();
+		map2.put(new UpdateBmVisitLabelSummary(), Utils.getAllSql(dbName9));
+		map2.put(new UpdateMarineWater1(), Utils.getAllSql(dbName10));
+		map2.put(new UpdateMarineWater2(), Utils.getAllSql(dbName11));
+		map2.put(new UpdateMarineWaterWqoRaw1(), Utils.getAllSql(dbName12));
+		map2.put(new UpdateRiverWater1(), Utils.getAllSql(dbName13));
+		map2.put(new UpdateRiverWater2(), Utils.getAllSql(dbName14));
+		map2.put(new UpdateRiverWaterWqi1(), Utils.getAllSql(dbName15));
 		// sql += " where yr >= " + (yr - 2);
-		u = new UpdateRiverWaterWqoSum0();
-		count = u.incrementalUpdateFromMssql(con, em, Utils.getAllSql(dbName16));
-		System.out.println(dbName16 + " " + count);
-		log.info(dbName16 + " " + count);
+		map2.put(new UpdateRiverWaterWqoSum0(), Utils.getAllSql(dbName16));
+		map2.put(new UpdateRwWqiAvg(), Utils.getAllSql(dbName17));
 
-		// incremental update
-		// sql += " where yr >= " + (yr - 2);
-		u = new UpdateRwWqiAvg();
-		count = u.incrementalUpdateFromMssql(con, em, Utils.getAllSql(dbName17));
-		System.out.println(dbName17 + " " + count);
-		log.info(dbName17 + " " + count);
+		for (Map.Entry<UpdateDbInterface, String> entry : map1.entrySet()) {
+			String sql = entry.getValue();
+			count = entry.getKey().updateAllFromMssql(con, em, sql);
+			System.out.println(sql + " ->update count: " + count);
+			log.info(sql + " " + count);
+		}
+
+		for (Map.Entry<UpdateDbInterface, String> entry : map2.entrySet()) {
+			String sql = entry.getValue();
+			count = entry.getKey().incrementalUpdateFromMssql(con, em, sql);
+			System.out.println(sql + " ->update count: " + count);
+			log.info(sql + " " + count);
+		}
 
 		// --------------------------------------------------------------
 		em.getTransaction().commit();
@@ -183,11 +122,4 @@ public class UpdateAll {
 			System.out.println(s);
 		}
 	}
-
-//	public int hqlTruncate(String myTable){
-//	    String hql = String.format("delete from %s",myTable);
-//	    Query query = session.createQuery(hql);
-//	    return query.executeUpdate();
-//	}
-
 }

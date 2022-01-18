@@ -9,4 +9,5 @@ public interface UpdateDbInterface {
 
 	int incrementalUpdateFromMssql(Connection con, EntityManager em, String sql);
 
+	void truncatePostgresTable();
 }

@@ -39,11 +39,12 @@
 				<version>3.0.0</version>
 
 				<executions>
-					<!-- mvn exec:exec@id1 -->
+
+					<!-- mvn exec:exec@id8 -->
 					<execution>
-						<id>id1</id>
+						<id>id8</id>
 						<goals>
-							<goal>java</goal>
+							<goal>exec</goal>
 						</goals>
 						<configuration>
 							<executable>java</executable>
@@ -55,101 +56,7 @@
 						</configuration>
 					</execution>
 
-					<!-- mvn exec:exec@id2 -->
-					<execution>
-						<id>id2</id>
-						<goals>
-							<goal>exec</goal>
-						</goals>
-						<configuration>
-							<executable>java</executable>
-							<arguments>
-								<argument>-classpath</argument>
-								<classpath />
-								<argument>dbUpdate.FetchAll</argument>
-							</arguments>
-						</configuration>
-					</execution>
 
-					<!-- mvn exec:exec@id3 -->
-					<execution>
-						<id>id3</id>
-						<goals>
-							<goal>exec</goal>
-						</goals>
-						<configuration>
-							<executable>java</executable>
-							<arguments>
-								<argument>-classpath</argument>
-								<classpath />
-								<argument>common.ConnectMssql</argument>
-							</arguments>
-						</configuration>
-					</execution>
-
-					<!-- mvn exec:exec@id4 -->
-					<execution>
-						<id>id4</id>
-						<goals>
-							<goal>exec</goal>
-						</goals>
-						<configuration>
-							<executable>java</executable>
-							<arguments>
-								<argument>-classpath</argument>
-								<classpath />
-								<argument>tidal.Download</argument>
-							</arguments>
-						</configuration>
-					</execution>
-
-					<!-- mvn exec:exec@id5 -->
-					<execution>
-						<id>id5</id>
-						<goals>
-							<goal>exec</goal>
-						</goals>
-						<configuration>
-							<executable>java</executable>
-							<arguments>
-								<argument>-classpath</argument>
-								<classpath />
-								<argument>uvi.Download</argument>
-							</arguments>
-						</configuration>
-					</execution>
-
-					<!-- mvn exec:exec@id6 -->
-					<execution>
-						<id>id6</id>
-						<goals>
-							<goal>exec</goal>
-						</goals>
-						<configuration>
-							<executable>java</executable>
-							<arguments>
-								<argument>-classpath</argument>
-								<classpath />
-								<argument>tidal.BatchDownload</argument>
-							</arguments>
-						</configuration>
-					</execution>
-
-					<!-- mvn exec:exec@id7 -->
-					<execution>
-						<id>id7</id>
-						<goals>
-							<goal>exec</goal>
-						</goals>
-						<configuration>
-							<executable>java</executable>
-							<arguments>
-								<argument>-classpath</argument>
-								<classpath />
-								<argument>tidal.CheckTideMissing</argument>
-							</arguments>
-						</configuration>
-					</execution>
 				</executions>
 
 				<configuration>

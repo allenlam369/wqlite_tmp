@@ -13,7 +13,8 @@ public class FetchAll {
 	static Connection con; // for mssql
 	static private EntityManager em = EntityManagerUtil.getEntityManager(); // for postgres
 
-	public static void main(String[] args) throws SQLException {
+	// NOT supposed to be used for creating tmp tables
+	public static void mainXX(String[] args) throws SQLException {
 		// for mssql
 		if (con == null) {
 			con = ConnectMssql.getConnection();
